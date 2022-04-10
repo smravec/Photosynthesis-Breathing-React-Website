@@ -11,8 +11,20 @@ export default function DemoPage() {
     const [WhichAssignment,ChangeAssignment] = useState("1")
     const [Elems1Array, AddItemToArray1] = useState([])
     const [Elems2Array, AddItemToArray2] = useState([])
+    const [SolvedState, SetSolve] = useState("solving")
 
-    const TestData = [
+
+    //Answers for Assignments
+    /*const Assignment1Answers1 = [{name:"C", count:"6"},{name:"O",count:"12"}]
+    const Assignment1Answers2 = [{name:"H", count:"12"},{name:"O",count:"6"}]
+
+    const Assignment2Answers1 = [{name:"C", count:"6"},{name:"O",count:"12"}]
+    const Assignment2Answers2 = [{name:"C", count:"6"},{name:"O",count:"12"}]
+
+    const Assignment3Answers1 = [{name:"C", count:"6"},{name:"O",count:"12"}]*/
+
+
+    /*const TestData = [
         {name:"H" , count: "3" , margin: "4.25rem 0px 0px 0px" , color:"linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)"},
         {name:"P" , count: "2" ,margin: "5.25rem 0px 0px 0px" , color:"linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)"},
         {name:"P" , count: "2" ,margin: "2.25rem 0px 0px 0px" , color:"linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)"},
@@ -20,18 +32,15 @@ export default function DemoPage() {
         {name:"P" , count: "2" ,margin: "1.25rem 0px 0px 0px" , color:"linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)"},
 
         
-    ]
+    ]*/
 
     function FindElementInArray(LookedForElem , WhichArray){
         let foundElem = false
         if(WhichArray === "1"){
             Elems1Array.forEach(element =>{
-                
                 if (element.name === LookedForElem){
                     foundElem = true
                 }
-               
-    
             })
         }
         else{
@@ -40,10 +49,7 @@ export default function DemoPage() {
                 if (element.name === LookedForElem){
                     foundElem = true
                 }
-               
-    
             })
-            
         }
         return foundElem
     }
@@ -51,29 +57,23 @@ export default function DemoPage() {
 
     function AddNewElem(ElemName,ElemColor,AddingOneOrTwo){
         
-        
-
         // First find if the element is already in the array
         if(FindElementInArray(ElemName, WhichIsChecked) === true){
             //adds 1 to the element
             if(WhichIsChecked === "1"){
-                const index = Elems1Array.findIndex(obj=> obj.name == ElemName)
+                const index = Elems1Array.findIndex(obj=> obj.name === ElemName)
                 const NewArray = [...Elems1Array]
                 NewArray[index].count = (parseInt(Elems1Array[index].count) + AddingOneOrTwo).toString() 
         
                 AddItemToArray1(NewArray)
             }
             else{
-                const index = Elems2Array.findIndex(obj=> obj.name == ElemName)
+                const index = Elems2Array.findIndex(obj=> obj.name === ElemName)
                 const NewArray = [...Elems2Array]
                 NewArray[index].count = (parseInt(Elems2Array[index].count) + 1).toString() 
                 
                 AddItemToArray2(NewArray)
-
             }
-
-
-
         }
         else{
             const randomMargin = Math.random() * 10 / 2
@@ -87,13 +87,22 @@ export default function DemoPage() {
                 AddItemToArray2([...Elems2Array,NewElem])
             }
         }
-        
-        
-
-        
-        
 
     }
+    /*
+    function CheckIfTheInputIsRight(){
+        let IsEverythingOk = true
+        
+        //Check First Assignment
+        if(WhichAssignment === "1"){
+
+        }
+
+
+
+
+        return IsEverythingOk
+    }*/
 
   return (
     <div className={styles.MainContainer}>
@@ -132,9 +141,9 @@ export default function DemoPage() {
         <div className={styles.MainContentContainer}>
         
             <div className={styles.ButtonsContainer}>
-                <button onClick={()=>{ChangeAssignment("1")}} className={styles.Button} id={styles.b1}>Uloha 1</button>
-                <button onClick={()=>{ChangeAssignment("2")}} className={styles.Button} id={styles.b2}>Uloha 2</button>
-                <button onClick={()=>{ChangeAssignment("3"); ChangeCheck("1")}} className={styles.Button} id={styles.b3}>Uloha 3</button>
+                <button onClick={()=>{ChangeAssignment("1");SetSolve("solving")}} className={styles.Button} id={styles.b1}>Uloha 1</button>
+                <button onClick={()=>{ChangeAssignment("2");SetSolve("solving")}} className={styles.Button} id={styles.b2}>Uloha 2</button>
+                <button onClick={()=>{ChangeAssignment("3"); ChangeCheck("1");SetSolve("solving")}} className={styles.Button} id={styles.b3}>Uloha 3</button>
             </div>
 
             <div className={styles.AssignmentContainer}>
@@ -152,7 +161,7 @@ export default function DemoPage() {
 
             <div className={styles.MainContentDisplay}>
                 <div className={styles.ChemElem1}>
-                    <div className={styles.ChemElemContent}>
+                    <div className={styles.ChemElemContent} id={SolvedState !== "solving" ? styles.Chm1 : null}>
 
                         {Elems1Array.map((elem) => {
                             return(
@@ -166,7 +175,26 @@ export default function DemoPage() {
                         
 
                     </div>
-                    <div className={styles.num} id={WhichIsChecked === "1" ? styles.numselected:null}>1</div>
+                    <div className={styles.CheckContainer}>
+                        <div className={styles.num} id={WhichIsChecked === "1" ? styles.numselected:null}>1</div>
+                        <div className={styles.Check} id={SolvedState === "solved"? styles.Check1 : null} >
+                        <svg width="473" height="321" viewBox="0 0 473 321" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M427.73 0L472.042 52.2011L211.311 273.524L167 221.322L427.73 0Z" fill="#13A53B"/>
+                            <path d="M214.094 271.463L155.751 320.388L0.654541 135.433L58.9982 86.5083L214.094 271.463Z" fill="#13A53B"/>
+                        </svg>
+
+
+                        </div>
+                        <div className={styles.Cross} id={SolvedState === "wrong" ? styles.Cross1:null}>
+                            <svg width="304" height="304" viewBox="0 0 304 304" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.796079 52.8272L53.1835 0.562957L303.204 251.173L250.817 303.438L0.796079 52.8272Z" fill="#F83131"/>
+                                <path d="M52.8961 303.398L0.458984 251.184L250.242 0.336182L302.679 52.5506L52.8961 303.398Z" fill="#F83131"/>
+                            </svg>
+
+                        </div>
+                    </div>
+                    
+                    
                 </div>
 
                 <div className={styles.ChemElem2}>
@@ -174,7 +202,7 @@ export default function DemoPage() {
                     
 
 
-                    <div className={styles.ChemElemContent}>
+                    <div className={styles.ChemElemContent} id={SolvedState !== "solving" ? styles.Chm2 : null}>
                         {Elems2Array.map((elem) => {
                                 return(
                                     <div key= {elem.name} className={styles.Atom} style={{margin: elem.margin}}>
@@ -205,17 +233,17 @@ export default function DemoPage() {
 
         <div className={styles.Buttons}>
         <div className={styles.FirstOrSecondEl}>
-            <button onClick={()=>{ChangeCheck("1")}} className={styles.bt1} id={ WhichIsChecked == "1" ? styles.bt1_checked : styles.bt1_unchecked} >
+            <button onClick={()=>{ChangeCheck("1")}} className={styles.bt1} id={ WhichIsChecked === "1" ? styles.bt1_checked : styles.bt1_unchecked} >
                 1
             </button>
-            <button onClick={()=>{ChangeCheck("2")}} className={styles.bt2} disabled={WhichAssignment === "3" ? true :false} id={ WhichIsChecked == "2" ? styles.bt2_checked : styles.bt2_unchecked} >
+            <button onClick={()=>{ChangeCheck("2")}} className={styles.bt2} disabled={WhichAssignment === "3" ? true :false} id={ WhichIsChecked === "2" ? styles.bt2_checked : styles.bt2_unchecked} >
                 2
             </button>
         </div>
 
         <div className={styles.FinalButtonsContainer} >
-            <button className={styles.btagain} onClick={()=>{AddItemToArray1([]);AddItemToArray2([])}}> Znova </button>
-            <button className={styles.btcheck}> Vyhodnot </button>
+            <button className={styles.btagain} onClick={()=>{AddItemToArray1([]);AddItemToArray2([]);SetSolve("solving")}}> Znova </button>
+            <button className={styles.btcheck} onClick={()=>{SetSolve("wrong")}}> Vyhodnot </button>
         </div>
         </div>
         </div>

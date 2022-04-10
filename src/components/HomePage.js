@@ -1,7 +1,7 @@
 import Button1 from "./Button1"
 import styles from "./HomePage.module.css"
 import {useNavigate} from "react-router-dom"
-import { useEffect } from "react"
+
 
 
 export default function HomePage(){

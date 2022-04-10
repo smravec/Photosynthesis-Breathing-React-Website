@@ -155,6 +155,7 @@
     width: 1.2rem;
     border-radius: 2px;
     user-select: none;
+    
 }
 
 #numselected{
@@ -292,4 +293,108 @@
     animation: AtomAppearing 1s;
 }
 
+@keyframes Chm1_solving {
+    0%{
+        opacity: 100%;
+    }
+    
+    70%{
+        opacity: 100%;
+    }
 
+    100%{
+        opacity: 0%;
+        transform: translate(0px,150px);
+    }
+}
+
+#Chm1{
+    opacity: 0;
+    animation: Chm1_solving 500ms;
+}
+
+@keyframes Chm2_solving {
+    0%{
+        opacity: 100%;
+    }
+    
+    70%{
+        opacity: 100%;
+    }
+
+    100%{
+        opacity: 0%;
+        transform: translate(0px,-150px);
+    }
+}
+
+#Chm2{
+    opacity: 0;
+    animation: Chm2_solving 500ms;
+}
+
+
+
+
+
+@keyframes checkappearing {
+    0%{
+        opacity: 0;
+        transform: translate(0px,-100px);
+    }
+    100%{
+        opacity: 100;
+    }
+    
+}
+
+.Check{
+    position: absolute;
+    
+    
+    
+    z-index: 20;
+    
+    top: 350px;
+    left: 35%;
+    opacity: 0;
+    
+    
+    
+
+}
+
+#Check1{
+    opacity: 100;
+    animation: checkappearing 1s;
+
+}
+.Cross{
+    position: absolute;
+    
+    
+    
+    
+    z-index: 22;
+    
+    top: 380px;
+    left: 40%;
+    opacity: 0;
+}
+
+@keyframes crossappearing {
+    0%{
+        opacity: 0%;
+        transform: translate(0px,-100px);
+    }
+
+    100%{
+        opacity: 100%;
+    }
+}
+
+#Cross1{
+    animation-delay: 2s;
+    animation: crossappearing 1s;
+    opacity: 100;
+}
