@@ -22,8 +22,76 @@ export default function DemoPage() {
         
     ]
 
-    function AddNewElem(){
+    function FindElementInArray(LookedForElem , WhichArray){
+        let foundElem = false
+        if(WhichArray === "1"){
+            Elems1Array.forEach(element =>{
+                
+                if (element.name === LookedForElem){
+                    foundElem = true
+                }
+               
+    
+            })
+        }
+        else{
 
+            Elems2Array.forEach(element =>{
+                if (element.name === LookedForElem){
+                    foundElem = true
+                }
+               
+    
+            })
+            
+        }
+        return foundElem
+    }
+
+
+    function AddNewElem(ElemName,ElemColor,AddingOneOrTwo){
+        
+        
+
+        // First find if the element is already in the array
+        if(FindElementInArray(ElemName, WhichIsChecked) === true){
+            //adds 1 to the element
+            if(WhichIsChecked === "1"){
+                const index = Elems1Array.findIndex(obj=> obj.name == ElemName)
+                const NewArray = [...Elems1Array]
+                NewArray[index].count = (parseInt(Elems1Array[index].count) + AddingOneOrTwo).toString() 
+        
+                AddItemToArray1(NewArray)
+            }
+            else{
+                const index = Elems2Array.findIndex(obj=> obj.name == ElemName)
+                const NewArray = [...Elems2Array]
+                NewArray[index].count = (parseInt(Elems2Array[index].count) + 1).toString() 
+                
+                AddItemToArray2(NewArray)
+
+            }
+
+
+
+        }
+        else{
+            const randomMargin = Math.random() * 10 / 2
+            
+            const NewElem = {name:ElemName, count:AddingOneOrTwo.toString(),color:ElemColor ,margin:randomMargin + "rem 0px 0px 0px"   }
+            
+            if(WhichIsChecked ==="1"){
+                AddItemToArray1([...Elems1Array,NewElem])
+            }
+            else{
+                AddItemToArray2([...Elems2Array,NewElem])
+            }
+        }
+        
+        
+
+        
+        
 
     }
 
@@ -86,11 +154,11 @@ export default function DemoPage() {
                 <div className={styles.ChemElem1}>
                     <div className={styles.ChemElemContent}>
 
-                        {TestData.map((elem) => {
+                        {Elems1Array.map((elem) => {
                             return(
                                 <div key= {elem.name} className={styles.Atom} style={{margin: elem.margin}}>
                                 <Atom key={elem.name} text = {elem.name} number={elem.count} style={{background:elem.color}}/>
-                            </div>
+                                </div>
                             )
                             
                         })}
@@ -107,7 +175,14 @@ export default function DemoPage() {
 
 
                     <div className={styles.ChemElemContent}>
-                    
+                        {Elems2Array.map((elem) => {
+                                return(
+                                    <div key= {elem.name} className={styles.Atom} style={{margin: elem.margin}}>
+                                    <Atom key={elem.name} text = {elem.name} number={elem.count} style={{background:elem.color}}/>
+                                </div>
+                                )
+                                
+                            })}
 
                     </div>
 
@@ -120,11 +195,11 @@ export default function DemoPage() {
 
         <div className={styles.Input}>
         <div className={styles.AddElemContainer}>
-            <AddElemDemoPage onClick1={()=>{console.log("elem1")}} onClick2={()=>{console.log("elem2")}} text="H" style={{background:"linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)"}}/>
-            <AddElemDemoPage onClick1={()=>{console.log("elem1")}} onClick2={()=>{console.log("elem2")}} text="C" style={{background:"linear-gradient(141.18deg, #FF2525 14.76%, #5B0808 84.94%)"}}/>
-            <AddElemDemoPage onClick1={()=>{console.log("elem1")}} onClick2={()=>{console.log("elem2")}} text="P" style={{background:"linear-gradient(323.82deg, #FFA825 17.01%, #FAFF1B 85.68%)"}}/>
-            <AddElemDemoPage onClick1={()=>{console.log("elem1")}} onClick2={()=>{console.log("elem2")}} text="N" style={{background:"linear-gradient(141.18deg, #2596FF 14.76%, #081F6F 84.94%)"}}/>
-            <AddElemDemoPage onClick1={()=>{console.log("elem1")}} onClick2={()=>{console.log("elem2")}} text="O" style={{background:"linear-gradient(141.18deg, #25FF55 14.76%, #10639E 84.94%)"}}/>
+            <AddElemDemoPage onClick1={()=>{AddNewElem("H","linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)",1)}} onClick2={()=>{AddNewElem("H","linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)",2)}} text="H" style={{background:"linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)"}}/>
+            <AddElemDemoPage onClick1={()=>{AddNewElem("C","linear-gradient(141.18deg, #FF2525 14.76%, #5B0808 84.94%)",1)}} onClick2={()=>{AddNewElem("C","linear-gradient(141.18deg, #FF2525 14.76%, #5B0808 84.94%)",2)}} text="C" style={{background:"linear-gradient(141.18deg, #FF2525 14.76%, #5B0808 84.94%)"}}/>
+            <AddElemDemoPage onClick1={()=>{AddNewElem("P","linear-gradient(323.82deg, #FFA825 17.01%, #FAFF1B 85.68%)",1)}} onClick2={()=>{AddNewElem("P","linear-gradient(323.82deg, #FFA825 17.01%, #FAFF1B 85.68%)",2)}} text="P" style={{background:"linear-gradient(323.82deg, #FFA825 17.01%, #FAFF1B 85.68%)"}}/>
+            <AddElemDemoPage onClick1={()=>{AddNewElem("N","linear-gradient(141.18deg, #2596FF 14.76%, #081F6F 84.94%)",1)}} onClick2={()=>{AddNewElem("N","linear-gradient(141.18deg, #2596FF 14.76%, #081F6F 84.94%)",2)}} text="N" style={{background:"linear-gradient(141.18deg, #2596FF 14.76%, #081F6F 84.94%)"}}/>
+            <AddElemDemoPage onClick1={()=>{AddNewElem("O","linear-gradient(141.18deg, #25FF55 14.76%, #10639E 84.94%)",1)}} onClick2={()=>{AddNewElem("O","linear-gradient(141.18deg, #25FF55 14.76%, #10639E 84.94%)",2)}} text="O" style={{background:"linear-gradient(141.18deg, #25FF55 14.76%, #10639E 84.94%)"}}/>
 
         </div>
 
@@ -139,7 +214,7 @@ export default function DemoPage() {
         </div>
 
         <div className={styles.FinalButtonsContainer} >
-            <button className={styles.btagain}> Znova </button>
+            <button className={styles.btagain} onClick={()=>{AddItemToArray1([]);AddItemToArray2([])}}> Znova </button>
             <button className={styles.btcheck}> Vyhodnot </button>
         </div>
         </div>

@@ -26,6 +26,7 @@
     position: relative;
     bottom: 140px;
     left: 70px;
+    cursor: pointer;
 }
 .BackButton:hover{
     background-color: #a2d3a1;
@@ -74,6 +75,7 @@
     border: 1px solid rgba(0, 0, 0, 0.41);
     color: #525151;
     position: relative;
+    cursor: pointer;
 
 }
 
@@ -141,7 +143,9 @@
     align-self: center;
     justify-self: center;
     display: flex;
-    justify-content: center;
+    
+   
+
     
     
 }
@@ -223,6 +227,7 @@
 
 #bt1_unchecked,#bt2_unchecked{
     background-color: transparent;
+    cursor: pointer;
 }
 
 .FinalButtonsContainer{
@@ -241,6 +246,7 @@
     color: white;
     border-radius: 10px;
     padding: 1rem 1rem 0.95rem 0.95rem;
+    cursor: pointer;
 }
 .btcheck{
     margin-left: 2rem;
@@ -266,9 +272,24 @@
     }
     
 }
+
+@keyframes AtomAppearing {
+    0%{
+        opacity: 0;
+        transform: translate(-10px);
+
+    }
+
+    100%{
+        opacity: 100;
+        transform: translate(0px);
+    }
+}
 .Atom{
     width: 12rem;
     height: 4rem;
     margin-top: 2rem;
+    animation: AtomAppearing 1s;
 }
+
 

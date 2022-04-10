@@ -31,7 +31,7 @@ export default function HomePage(){
         <div className={styles.MainContainer1}>
             <div className={styles.ButtonsContainer}>
 
-                <Button1 text = "Source" className={styles.OtherButton} onClick = {() => window.location.href = "https://github.com/smravec"} ></Button1>
+                <Button1 text = "Source" className={styles.OtherButton} onClick = {() => window.location.href = "https://github.com/smravec/Photosynthesis-Breathing-React-Website"} ></Button1>
 
                 <Button1 text = "Demo" className={styles.OtherButton} onClick = {() => redirect("/demo")} ></Button1>
 
