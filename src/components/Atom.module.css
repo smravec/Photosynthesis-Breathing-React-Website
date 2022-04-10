@@ -1,0 +1,41 @@
+#atom {
+    --d: 100px;
+    width: var(--d);
+    height: var(--d);
+    
+    position: absolute;
+    border-radius: 50%;
+      
+  }
+
+#atom::before{
+    content: '';
+      width: 0;
+      height: 0;
+      background: rgb(255, 255, 255);
+      position: absolute;
+      top: 30%;
+      right: 30%;
+      border-radius: 50%;
+      box-shadow: 0 0 30px 10px rgb(255, 255, 255);
+}
+
+  
+.text{
+      transform:translate(38px, 28px);
+      font-size: 1.9rem;
+      color: whitesmoke;
+      font-family: "PlayFair Display";
+      font-weight: 600;
+      user-select: none;
+
+  }
+
+.number{
+  font-size: 1.3rem;
+  font-family: "PlayFair Display";
+  transform: translate(60px,14px);
+  color: whitesmoke;
+  user-select: none;
+
+}

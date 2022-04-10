@@ -1,0 +1,83 @@
+
+
+.MainContainer{
+    display: flex;
+    flex-direction: column;
+    background: url("../imgs/MainBg.jpg") ;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100vh;
+
+    justify-content: space-between;
+
+
+}
+
+.MainContainer1{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.ButtonsContainer{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2.5rem;
+}
+
+
+.QuizButton{
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.75rem;
+    font-weight: 600;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(204, 203, 203, 0.94) 0%, rgba(255, 255, 255, 0.7238) 100%);
+    color: rgb(0, 0, 0);
+    font-size: 2.25rem;
+}
+.QuizButton:hover,.QuizButton:active{
+    background: radial-gradient(50% 50% at 50% 50%, rgba(161, 160, 160, 0.94) 0%, rgba(197, 194, 194, 0.724) 100%);
+}
+
+.OtherButton{
+    font-weight: 300;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 0.75rem;
+    padding-top: 0.5rem;
+    font-size: 2.25rem;
+
+    background-color: rgba(236, 230, 230, 0.3);
+    color: rgb(243, 239, 239);
+}
+
+.OtherButton:hover, .OtherButton:active{
+    background-color: rgba(161, 161, 161, 0.3);
+}
+
+.Line{
+    height: 0.1rem;
+    background-color: rgba(236, 230, 230, 0.3);
+    margin-top: 4rem;
+    width: 92%;
+    align-self: center;
+
+}
+
+.RandomFact{
+    font-weight: lighter;
+    margin-bottom: 5rem;
+    width: fit-content;
+    color: #D7D7D7;
+    max-width: 70%;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    justify-self: flex-end;
+    font-size: 2.25rem;
+}

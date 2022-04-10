@@ -1,0 +1,274 @@
+
+
+.MainContainer{
+
+    display: flex;
+    flex-direction: column;
+    
+    background-color: white;
+
+
+    
+    height: 50rem;
+}
+
+.BackButton{
+    color: #383838;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 0.75rem;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    background-color: #C7FFC6;
+    box-shadow:4px 2px 4px 1px rgba(0, 0, 0, 0.25);
+    font-weight: 600;
+
+    position: relative;
+    bottom: 140px;
+    left: 70px;
+}
+.BackButton:hover{
+    background-color: #a2d3a1;
+
+}
+
+
+
+
+.BackButtonContainer{
+    width:273px;
+    height:156px;
+    position: absolute;
+    align-self: flex-end;
+    
+}
+
+.svg{
+    z-index: -1;
+}
+
+.MainContentContainer{
+    width: 96%;
+    
+    align-self: center;
+    margin-top: 10rem;
+}
+
+
+
+
+
+.ButtonsContainer{
+    display: flex;
+    width: fit-content;
+
+
+}
+
+.Button{
+    font-family: "Play Fair Display";
+    font-size: 2rem;
+    padding-left: 3rem;
+    padding-right: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.41);
+    color: #525151;
+    position: relative;
+
+}
+
+#b1{
+ z-index: 3;
+}
+
+#b2{
+    z-index: 2;
+    right: 45px;
+}
+
+#b3{
+    z-index: 1;
+    right: 90px;
+}
+
+
+.AssignmentContainer{
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+.HeadherText{
+    font-size: 2rem;
+    font-weight: 200;
+    align-self: center;
+    
+    color: #474646;
+    
+    margin-top: 1rem;
+    
+}
+
+.MainContentDisplay{
+    margin-top: 2rem;
+    font-size: 2rem;
+    background-color: rgb(226, 226, 226);
+    border-radius: 10px;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.ChemElem1{
+    height: 50%;
+    
+    border-bottom: 3px solid #C4C4C4;
+    display: flex;
+    flex-direction: column;
+}
+
+.ChemElem2{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.ChemElemContent{
+    
+    width: 90%;
+    height: 90%;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.num{
+    color: #383838;
+    width: 1.2rem;
+    border-radius: 2px;
+    user-select: none;
+}
+
+#numselected{
+    color: rgb(255, 255, 255);
+   
+    background-color: rgb(0, 157, 255);
+}
+
+.AddElemContainer{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin-top: 3rem;
+
+    
+    
+    
+}
+
+.Input{
+    display: flex;
+    
+    width: 96%;
+    justify-self: center;
+    align-self: center;
+}
+
+.FirstOrSecondEl{
+    
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    height: 4rem;
+    background-color:rgba(220, 222, 223, 0.91);
+    border-radius: 20px;
+    
+    
+}
+.Buttons{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-top: 2rem;
+    align-items: center;
+}
+  
+@keyframes changing-slider {
+    0%{
+        background-color: transparent;
+        color: black;
+    }
+
+    100%{
+        background-attachment: rgb(0, 157, 255);
+    }
+}
+
+.bt1,.bt2{
+    border: none;
+    width: 6rem;
+    font-size: 2rem;
+    border-radius: 15px;
+}
+#bt1_checked,#bt2_checked{
+    background-color: rgb(0, 157, 255);
+    color: white;
+    animation: changing-slider 500ms;
+}
+
+
+#bt1_unchecked,#bt2_unchecked{
+    background-color: transparent;
+}
+
+.FinalButtonsContainer{
+    display: flex;
+    
+    width: 95%;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+}
+
+.btagain,.btcheck{
+    border: none;
+    font-size: 2.5rem;
+    font-weight: 100;
+    font-family: "Roboto";
+    color: white;
+    border-radius: 10px;
+    padding: 1rem 1rem 0.95rem 0.95rem;
+}
+.btcheck{
+    margin-left: 2rem;
+    background: linear-gradient(92.77deg, rgba(86, 213, 241, 0.79) 0%, rgba(14, 120, 219, 0.85) 100%) ;
+       
+}
+
+.btcheck:hover,.btcheck:active{
+    background: linear-gradient(92.77deg, rgba(66, 167, 190, 0.79) 0%, rgba(11, 99, 181, 0.85) 100%) ;
+}
+
+.btagain{
+    background: linear-gradient(92.53deg, #FC3838 3.34%, #FF8A00 97.64%);
+    margin-left: 2rem;
+}
+
+.btagain:hover,.btagain:active{
+    background: linear-gradient(92.53deg, #bc2323 3.34%, #c96e06 97.64%);
+}
+@media screen and (max-width:1375px){
+    .btcheck{
+        margin-left: 0.5rem;
+    }
+    
+}
+.Atom{
+    width: 12rem;
+    height: 4rem;
+    margin-top: 2rem;
+}
+
