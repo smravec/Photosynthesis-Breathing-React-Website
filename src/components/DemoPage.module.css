@@ -99,6 +99,25 @@
     margin-left: 0.5rem;
 }
 
+
+@keyframes loadingtext {
+    0%{
+        background-color: rgb(199, 197, 197);
+        color: transparent;
+    }    
+
+    60%{
+
+        color: transparent ;
+    }
+
+    100%{
+        background-color: white;
+        color: #474646;
+    }
+}
+
+
 .HeadherText{
     font-size: 2rem;
     font-weight: 200;
@@ -107,6 +126,18 @@
     color: #474646;
     
     margin-top: 1rem;
+
+    animation: loadingtext 0.5s;
+    padding: 1rem;
+    border-radius: 10px;
+    
+    
+}
+
+.HeadherTextNew{
+    animation: loadingtext 1s ease-in;
+    border-radius: 10px;
+    padding: 0.5rem;
     
 }
 
@@ -375,12 +406,14 @@
     
     
     
-    z-index: 22;
+    z-index: 1;
     
     top: 380px;
     left: 40%;
     opacity: 0;
 }
+
+
 
 @keyframes crossappearing {
     0%{

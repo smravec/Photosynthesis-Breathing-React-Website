@@ -15,24 +15,14 @@ export default function DemoPage() {
 
 
     //Answers for Assignments
-    /*const Assignment1Answers1 = [{name:"C", count:"6"},{name:"O",count:"12"}]
-    const Assignment1Answers2 = [{name:"H", count:"12"},{name:"O",count:"6"}]
+    const Assignment1Answers1 = [{name:"C", count:"6"},{name:"H",count:"12"},{name:"O", count:"6"}]
+    const Assignment1Answers2 = [{name:"O", count:"12"}]
 
-    const Assignment2Answers1 = [{name:"C", count:"6"},{name:"O",count:"12"}]
+    const Assignment2Answers1 = [{name:"H", count:"12"},{name:"O",count:"6"}]
     const Assignment2Answers2 = [{name:"C", count:"6"},{name:"O",count:"12"}]
 
-    const Assignment3Answers1 = [{name:"C", count:"6"},{name:"O",count:"12"}]*/
+    const Assignment3Answers1 = [{name:"C", count:"10"},{name:"H",count:"16"},{name:"N",count:"5"},{name:"O",count:"13"},{name:"P",count:"3"}]
 
-
-    /*const TestData = [
-        {name:"H" , count: "3" , margin: "4.25rem 0px 0px 0px" , color:"linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)"},
-        {name:"P" , count: "2" ,margin: "5.25rem 0px 0px 0px" , color:"linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)"},
-        {name:"P" , count: "2" ,margin: "2.25rem 0px 0px 0px" , color:"linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)"},
-        {name:"P" , count: "2" ,margin: "3.25rem 0px 0px 0px" , color:"linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)"},
-        {name:"P" , count: "2" ,margin: "1.25rem 0px 0px 0px" , color:"linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)"},
-
-        
-    ]*/
 
     function FindElementInArray(LookedForElem , WhichArray){
         let foundElem = false
@@ -70,7 +60,7 @@ export default function DemoPage() {
             else{
                 const index = Elems2Array.findIndex(obj=> obj.name === ElemName)
                 const NewArray = [...Elems2Array]
-                NewArray[index].count = (parseInt(Elems2Array[index].count) + 1).toString() 
+                NewArray[index].count = (parseInt(Elems2Array[index].count) + AddingOneOrTwo).toString() 
                 
                 AddItemToArray2(NewArray)
             }
@@ -89,20 +79,88 @@ export default function DemoPage() {
         }
 
     }
-    /*
+    
     function CheckIfTheInputIsRight(){
         let IsEverythingOk = true
-        
-        //Check First Assignment
-        if(WhichAssignment === "1"){
+        let Answers1 = []
+        let Answers2 = []
+        let UserInput1= []
+        let UserInput2 = []
+
+        //Check for first and second assignment as they consist of two elements
+        if(WhichAssignment === "1" || WhichAssignment === "2"){
+            
+            //First check if input is not empty
+            if(Elems1Array.length === 0 || Elems2Array.length === 0){
+                IsEverythingOk = false
+            }
+
+            UserInput1 = [...Elems1Array]
+            UserInput2 = [...Elems2Array]
+            
+            if(WhichAssignment === "1"){
+                Answers1 = [...Assignment1Answers1]
+                Answers2 = [...Assignment1Answers2]
+            }
+
+            if( WhichAssignment === "2"){
+                Answers1 = [...Assignment2Answers1]
+                Answers2 = [...Assignment2Answers2]
+            }
+            
+            //Checks the first element
+            Answers1.forEach(CorrectAns => {
+                UserInput1.forEach((UserAns,Index) => {
+                    if(CorrectAns.name === UserAns.name && CorrectAns.count === UserAns.count){
+                        UserInput1.splice(Index,1)
+                    }
+                });
+            });
+
+            //Checks the second element
+            Answers2.forEach(CorrectAns => {
+                UserInput2.forEach((UserAns,Index) => {
+                    if(CorrectAns.name === UserAns.name && CorrectAns.count === UserAns.count){
+                        UserInput2.splice(Index,1)
+                    }
+                });
+            });
+
+            if(UserInput1.length !== 0 || UserInput2.length !== 0){
+                IsEverythingOk = false
+            }
+        }
+
+        //Checks third assignment as it consist if only one element 
+        if(WhichAssignment === "3"){
+
+            //First check if the element is not empty
+            if(Elems1Array.length === 0){
+                IsEverythingOk = false
+            }
+
+            Answers1 = [...Assignment3Answers1]
+            UserInput1 = [...Elems1Array]
+
+            Answers1.forEach(CorrectAns => {
+                UserInput1.forEach((UserAns,Index) => {
+                    if(CorrectAns.name === UserAns.name && CorrectAns.count === UserAns.count){
+                        UserInput1.splice(Index,1)
+                    }
+                });
+            });
+
+            if(UserInput1.length !== 0){
+                IsEverythingOk = false
+            }
 
         }
 
 
 
-
+        console.log(IsEverythingOk)
         return IsEverythingOk
-    }*/
+    }
 
   return (
     <div className={styles.MainContainer}>
@@ -141,18 +199,16 @@ export default function DemoPage() {
         <div className={styles.MainContentContainer}>
         
             <div className={styles.ButtonsContainer}>
-                <button onClick={()=>{ChangeAssignment("1");SetSolve("solving")}} className={styles.Button} id={styles.b1}>Uloha 1</button>
-                <button onClick={()=>{ChangeAssignment("2");SetSolve("solving")}} className={styles.Button} id={styles.b2}>Uloha 2</button>
-                <button onClick={()=>{ChangeAssignment("3"); ChangeCheck("1");SetSolve("solving")}} className={styles.Button} id={styles.b3}>Uloha 3</button>
+                <button onClick={()=>{ChangeAssignment("1");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.b1}>Uloha 1</button>
+                <button onClick={()=>{ChangeAssignment("2");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.b2}>Uloha 2</button>
+                <button onClick={()=>{ChangeAssignment("3"); ChangeCheck("1");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.b3}>Uloha 3</button>
             </div>
 
             <div className={styles.AssignmentContainer}>
-                <div className={styles.HeadherText}>Zadanie :&nbsp;</div>
-                <div className={styles.HeadherText}>
-                    {WhichAssignment === "1" ? "Poskladaj vstupy do vzorcu dychania":null}
-                    {WhichAssignment === "2" ? "Poskladaj vstupy do vzorcu fotosynteza":null}
-                    {WhichAssignment === "3" ? "Poskladaj vzorec ATP":null}
-                    
+                <div className={styles.HeadherText}>Zadanie :&nbsp;
+                    {WhichAssignment === "1" ? <span className={styles.HeadherTextNew}>Poskladaj vstupy do vzorcu dychania</span>:null}
+                    {WhichAssignment === "2" ? <span className={styles.HeadherTextNew}>Poskladaj vstupy do vzorcu fotosynteza</span>:null}
+                    {WhichAssignment === "3" ? <span className={styles.HeadherTextNew}>Poskladaj vzorec ATP</span>:null}
                 </div>
            
            
@@ -190,6 +246,7 @@ export default function DemoPage() {
                                 <path d="M0.796079 52.8272L53.1835 0.562957L303.204 251.173L250.817 303.438L0.796079 52.8272Z" fill="#F83131"/>
                                 <path d="M52.8961 303.398L0.458984 251.184L250.242 0.336182L302.679 52.5506L52.8961 303.398Z" fill="#F83131"/>
                             </svg>
+                            
 
                         </div>
                     </div>
@@ -243,7 +300,7 @@ export default function DemoPage() {
 
         <div className={styles.FinalButtonsContainer} >
             <button className={styles.btagain} onClick={()=>{AddItemToArray1([]);AddItemToArray2([]);SetSolve("solving")}}> Znova </button>
-            <button className={styles.btcheck} onClick={()=>{SetSolve("wrong")}}> Vyhodnot </button>
+            <button className={styles.btcheck} onClick={()=>{SetSolve(CheckIfTheInputIsRight() ? "solved":"wrong");}}> Vyhodnot </button>
         </div>
         </div>
         </div>
