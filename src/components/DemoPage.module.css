@@ -127,7 +127,7 @@
     
     margin-top: 1rem;
 
-    animation: loadingtext 0.5s;
+    
     padding: 1rem;
     border-radius: 10px;
     
@@ -384,11 +384,11 @@
     
     
     
-    z-index: 20;
+    z-index: 1;
     
     top: 350px;
     left: 35%;
-    opacity: 0;
+   
     
     
     
@@ -431,3 +431,68 @@
     animation: crossappearing 1s;
     opacity: 100;
 }
+
+
+@keyframes AtomsAppearing {
+    0%{
+        opacity: 0%;
+        
+    }
+
+    30%{
+        opacity: 0%;
+        
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+.ans1,.ans1el1,.ans1el2,.ans1el3,.ans1el4,.ans1el5{
+    position: absolute;
+    z-index: 1;
+}
+
+.ans1{
+    position: absolute;
+    top: 160px;
+    opacity: 0%;
+    
+    
+}
+
+.ans1el1{
+    position: absolute;
+    
+    left: -130px;
+    top: 20px;
+}
+
+.ans1el2{
+    left: 10px;
+}
+
+.ans1el3{
+    font-size: 6rem;
+    color:#403f3f;
+    font-weight: 100;
+    top: -5px;
+    left: 130px;
+    user-select: none;
+}
+ .ans1el4{
+     left: 200px;
+     top: 20px;
+ }
+
+ .ans1el5{
+     left: 330px;
+     top: -10px;
+ }
+
+ #ans1{
+    animation: AtomsAppearing 1s;
+    opacity: 100%;
+    
+ }
+

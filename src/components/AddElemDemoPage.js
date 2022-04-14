@@ -7,7 +7,7 @@ export default function AddElemDemoPage(props){
         <div className={styles.AddElem}>
             
             <div className={styles.AddElemInnerContainer}>
-                <Atom text = {props.text} className={styles.Atom} style={props.style}/>
+                <Atom text = {props.text} className={styles.Atom}/>
                 <div className={styles.AddElemButtonsContainer}>
                     <button id={styles.btn1} onClick={props.onClick1}>
                     <svg className={styles.AddElemVector1} width="46" height="47" viewBox="0 0 46 47" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -153,12 +153,8 @@ export default function DemoPage() {
             if(UserInput1.length !== 0){
                 IsEverythingOk = false
             }
-
         }
-
-
-
-        console.log(IsEverythingOk)
+        IsEverythingOk = true
         return IsEverythingOk
     }
 
@@ -233,13 +229,41 @@ export default function DemoPage() {
                     </div>
                     <div className={styles.CheckContainer}>
                         <div className={styles.num} id={WhichIsChecked === "1" ? styles.numselected:null}>1</div>
-                        <div className={styles.Check} id={SolvedState === "solved"? styles.Check1 : null} >
-                        <svg width="473" height="321" viewBox="0 0 473 321" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+
+                        <div className={styles.Check} >
+                        {WhichAssignment === "1" ?
+                        <div className={styles.ans1} id={SolvedState === "solved" ? styles.ans1 : null}>
+                            <span className={styles.ans1el1}>
+                                <Atom text = "H" number="12"  />
+                            </span>
+                            <span className={styles.ans1el2}> 
+                                <Atom text = "O" number="6"/>
+                            </span>
+                            <span className={styles.ans1el3 }>+</span>
+                            <span className={styles.ans1el4}>
+                                <Atom text = "C" number = "6"/>
+                            </span>
+                            <span className={styles.ans1el5}>
+                                <Atom text = "O" number = "12"/>
+                            </span>
+                            
+                        </div>
+                        :null}
+
+                        {WhichAssignment === "2" ? 
+                        <div>
+
+                        </div>
+                        :null}
+                        
+                        {WhichAssignment === "3" ? 
+                        <svg id={SolvedState === "solved"? styles.Check1 : null} width="473" height="321" viewBox="0 0 473 321" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M427.73 0L472.042 52.2011L211.311 273.524L167 221.322L427.73 0Z" fill="#13A53B"/>
                             <path d="M214.094 271.463L155.751 320.388L0.654541 135.433L58.9982 86.5083L214.094 271.463Z" fill="#13A53B"/>
                         </svg>
-
-
+                         : null}    
+        
                         </div>
                         <div className={styles.Cross} id={SolvedState === "wrong" ? styles.Cross1:null}>
                             <svg width="304" height="304" viewBox="0 0 304 304" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -280,11 +304,11 @@ export default function DemoPage() {
 
         <div className={styles.Input}>
         <div className={styles.AddElemContainer}>
-            <AddElemDemoPage onClick1={()=>{AddNewElem("H","linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)",1)}} onClick2={()=>{AddNewElem("H","linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)",2)}} text="H" style={{background:"linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)"}}/>
-            <AddElemDemoPage onClick1={()=>{AddNewElem("C","linear-gradient(141.18deg, #FF2525 14.76%, #5B0808 84.94%)",1)}} onClick2={()=>{AddNewElem("C","linear-gradient(141.18deg, #FF2525 14.76%, #5B0808 84.94%)",2)}} text="C" style={{background:"linear-gradient(141.18deg, #FF2525 14.76%, #5B0808 84.94%)"}}/>
-            <AddElemDemoPage onClick1={()=>{AddNewElem("P","linear-gradient(323.82deg, #FFA825 17.01%, #FAFF1B 85.68%)",1)}} onClick2={()=>{AddNewElem("P","linear-gradient(323.82deg, #FFA825 17.01%, #FAFF1B 85.68%)",2)}} text="P" style={{background:"linear-gradient(323.82deg, #FFA825 17.01%, #FAFF1B 85.68%)"}}/>
-            <AddElemDemoPage onClick1={()=>{AddNewElem("N","linear-gradient(141.18deg, #2596FF 14.76%, #081F6F 84.94%)",1)}} onClick2={()=>{AddNewElem("N","linear-gradient(141.18deg, #2596FF 14.76%, #081F6F 84.94%)",2)}} text="N" style={{background:"linear-gradient(141.18deg, #2596FF 14.76%, #081F6F 84.94%)"}}/>
-            <AddElemDemoPage onClick1={()=>{AddNewElem("O","linear-gradient(141.18deg, #25FF55 14.76%, #10639E 84.94%)",1)}} onClick2={()=>{AddNewElem("O","linear-gradient(141.18deg, #25FF55 14.76%, #10639E 84.94%)",2)}} text="O" style={{background:"linear-gradient(141.18deg, #25FF55 14.76%, #10639E 84.94%)"}}/>
+            <AddElemDemoPage onClick1={()=>{AddNewElem("H","linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)",1)}} onClick2={()=>{AddNewElem("H","linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)",2)}} text="H" />
+            <AddElemDemoPage onClick1={()=>{AddNewElem("C","linear-gradient(141.18deg, #FF2525 14.76%, #5B0808 84.94%)",1)}} onClick2={()=>{AddNewElem("C","linear-gradient(141.18deg, #FF2525 14.76%, #5B0808 84.94%)",2)}} text="C" />
+            <AddElemDemoPage onClick1={()=>{AddNewElem("P","linear-gradient(323.82deg, #FFA825 17.01%, #FAFF1B 85.68%)",1)}} onClick2={()=>{AddNewElem("P","linear-gradient(323.82deg, #FFA825 17.01%, #FAFF1B 85.68%)",2)}} text="P" />
+            <AddElemDemoPage onClick1={()=>{AddNewElem("N","linear-gradient(141.18deg, #2596FF 14.76%, #081F6F 84.94%)",1)}} onClick2={()=>{AddNewElem("N","linear-gradient(141.18deg, #2596FF 14.76%, #081F6F 84.94%)",2)}} text="N" />
+            <AddElemDemoPage onClick1={()=>{AddNewElem("O","linear-gradient(141.18deg, #25FF55 14.76%, #10639E 84.94%)",1)}} onClick2={()=>{AddNewElem("O","linear-gradient(141.18deg, #25FF55 14.76%, #10639E 84.94%)",2)}} text="O" />
 
         </div>
 

@@ -37,6 +37,7 @@
     background: radial-gradient(50% 50% at 50% 50%, rgba(204, 203, 203, 0.94) 0%, rgba(255, 255, 255, 0.7238) 100%);
     color: rgb(0, 0, 0);
     font-size: 2.25rem;
+    cursor: pointer;
 }
 .QuizButton:hover,.QuizButton:active{
     background: radial-gradient(50% 50% at 50% 50%, rgba(161, 160, 160, 0.94) 0%, rgba(197, 194, 194, 0.724) 100%);
@@ -49,6 +50,7 @@
     padding-bottom: 0.75rem;
     padding-top: 0.5rem;
     font-size: 2.25rem;
+    cursor: pointer;
 
     background-color: rgba(236, 230, 230, 0.3);
     color: rgb(243, 239, 239);
@@ -67,6 +69,18 @@
 
 }
 
+@keyframes RandomFactLoading {
+    0%{
+        background-color: gray;
+        color: transparent;
+    }
+
+    100%{
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+}
+
+
 .RandomFact{
     font-weight: lighter;
     margin-bottom: 5rem;
@@ -80,4 +94,9 @@
     padding-left: 2rem;
     justify-self: flex-end;
     font-size: 2.25rem;
+    animation: RandomFactLoading 500ms;
+    position: absolute;
+    top: 70%;
+    left: -20px;
+    
 }
