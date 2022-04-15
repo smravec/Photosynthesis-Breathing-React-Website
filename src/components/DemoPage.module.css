@@ -400,6 +400,10 @@
     animation: checkappearing 1s;
 
 }
+
+.Check1{
+    opacity: 0;
+}
 .Cross{
     position: absolute;
     
@@ -439,7 +443,7 @@
         
     }
 
-    30%{
+    80%{
         opacity: 0%;
         
     }
@@ -491,8 +495,56 @@
  }
 
  #ans1{
-    animation: AtomsAppearing 1s;
+    animation: AtomsAppearing 700ms;
     opacity: 100%;
     
  }
+
+.ans2{
+    position: absolute;
+    top: 160px;
+    opacity: 0%;
+}
+
+#ans2{
+    animation: AtomsAppearing 700ms;
+    opacity: 100%;
+
+}
+
+.ans2el1{
+    position: absolute;
+    
+    left: -130px;
+    top: 20px;
+}
+
+.ans2el2{
+    position: absolute;
+    left: 10px;
+
+}
+
+.ans2el3{
+    position: absolute;
+    left: 145px;
+
+}
+
+.ans2el4{
+    position: absolute;
+    font-size: 6rem;
+    color:#403f3f;
+    font-weight: 100;
+    
+    user-select: none;
+    left: 270px;
+    top: -5px;
+}
+
+.ans2el5{
+    position: absolute;
+    left: 350px;
+    top: -5px;
+}
 
