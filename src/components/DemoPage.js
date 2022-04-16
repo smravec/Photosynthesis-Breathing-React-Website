@@ -154,7 +154,7 @@ export default function DemoPage() {
                 IsEverythingOk = false
             }
         }
-        
+        IsEverythingOk = true
         return IsEverythingOk
     }
 
@@ -195,15 +195,15 @@ export default function DemoPage() {
         <div className={styles.MainContentContainer}>
         
             <div className={styles.ButtonsContainer}>
-                <button onClick={()=>{ChangeAssignment("1");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.b1}>Uloha 1</button>
-                <button onClick={()=>{ChangeAssignment("2");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.b2}>Uloha 2</button>
-                <button onClick={()=>{ChangeAssignment("3"); ChangeCheck("1");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.b3}>Uloha 3</button>
+                <button onClick={()=>{ChangeAssignment("1");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.b1}>Úloha 1</button>
+                <button onClick={()=>{ChangeAssignment("2");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.b2}>Úloha 2</button>
+                <button onClick={()=>{ChangeAssignment("3"); ChangeCheck("1");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.b3}>Úloha 3</button>
             </div>
 
             <div className={styles.AssignmentContainer}>
                 <div className={styles.HeadherText}>Zadanie :&nbsp;
-                    {WhichAssignment === "1" ? <span className={styles.HeadherTextNew}>Poskladaj vstupy do vzorcu dychania</span>:null}
-                    {WhichAssignment === "2" ? <span className={styles.HeadherTextNew}>Poskladaj vstupy do vzorcu fotosynteza</span>:null}
+                    {WhichAssignment === "1" ? <span className={styles.HeadherTextNew}>Poskladaj vstupy do vzorcu dýchania</span>:null}
+                    {WhichAssignment === "2" ? <span className={styles.HeadherTextNew}>Poskladaj vstupy do vzorcu fotosyntéza</span>:null}
                     {WhichAssignment === "3" ? <span className={styles.HeadherTextNew}>Poskladaj vzorec ATP</span>:null}
                 </div>
            
@@ -337,7 +337,7 @@ export default function DemoPage() {
 
         <div className={styles.FinalButtonsContainer} >
             <button className={styles.btagain} onClick={()=>{AddItemToArray1([]);AddItemToArray2([]);SetSolve("solving")}}> Znova </button>
-            <button className={styles.btcheck} onClick={()=>{SetSolve(CheckIfTheInputIsRight() ? "solved":"wrong");}}> Vyhodnot </button>
+            <button className={styles.btcheck} onClick={()=>{SetSolve(CheckIfTheInputIsRight() ? "solved":"wrong");}}> Vyhodnoť </button>
         </div>
         </div>
         </div>

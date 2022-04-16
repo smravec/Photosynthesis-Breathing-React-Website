@@ -495,7 +495,7 @@
  }
 
  #ans1{
-    animation: AtomsAppearing 700ms;
+    animation: AtomsAppearing 500ms;
     opacity: 100%;
     
  }
@@ -504,10 +504,12 @@
     position: absolute;
     top: 160px;
     opacity: 0%;
+    
+    
 }
 
 #ans2{
-    animation: AtomsAppearing 700ms;
+    animation: AtomsAppearing 500ms;
     opacity: 100%;
 
 }
@@ -545,6 +547,6 @@
 .ans2el5{
     position: absolute;
     left: 350px;
-    top: -5px;
+    top: 15px;
 }
 
