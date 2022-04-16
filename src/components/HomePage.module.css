@@ -1,73 +1,95 @@
-
-
+/* Flex Containers */
 .MainContainer{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+
+    height: 100vh;
+
     background: url("../imgs/MainBg.jpg") ;
     background-repeat: no-repeat;
     background-size:cover;
-    height: 100vh;
-
-    justify-content: space-between;
-
-
 }
 
 .MainContainer1{
     display: flex;
     flex-direction: column;
+
     margin: 0;
     padding: 0;
+
     width: 100%;
 }
 
 .ButtonsContainer{
     display: flex;
     justify-content: space-around;
+
     margin-top: 2.5rem;
 }
 
-
+/* Buttons */
+/* Quiz button */
 .QuizButton{
     padding-left: 5rem;
     padding-right: 5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.75rem;
+
     font-weight: 600;
+    font-size: 2.25rem;
+
     background: radial-gradient(50% 50% at 50% 50%, rgba(204, 203, 203, 0.94) 0%, rgba(255, 255, 255, 0.7238) 100%);
     color: rgb(0, 0, 0);
-    font-size: 2.25rem;
+
     cursor: pointer;
-}
-.QuizButton:hover,.QuizButton:active{
-    background: radial-gradient(50% 50% at 50% 50%, rgba(161, 160, 160, 0.94) 0%, rgba(197, 194, 194, 0.724) 100%);
+
+    border: 1px solid rgba(236, 230, 230, 0.12);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.QuizButton:hover,.QuizButton:active{
+    background: radial-gradient(50% 50% at 50% 50%, rgba(161, 160, 160, 0.94) 0%, rgba(197, 194, 194, 0.724) 100%);
+    border: 1px solid rgba(149, 146, 146, 0.12);
+}
+
+/* Other buttons */
 .OtherButton{
     font-weight: 300;
+    font-size: 2.25rem;
+    cursor: pointer;
+
     padding-left: 4rem;
     padding-right: 4rem;
     padding-bottom: 0.75rem;
     padding-top: 0.5rem;
-    font-size: 2.25rem;
-    cursor: pointer;
+
 
     background-color: rgba(236, 230, 230, 0.3);
     color: rgb(243, 239, 239);
+
+    border: 1px solid rgba(236, 230, 230, 0.12);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .OtherButton:hover, .OtherButton:active{
     background-color: rgba(161, 161, 161, 0.3);
 }
 
+/* Line below buttons */
 .Line{
     height: 0.1rem;
-    background-color: rgba(236, 230, 230, 0.3);
-    margin-top: 4rem;
     width: 92%;
-    align-self: center;
 
+    background-color: rgba(236, 230, 230, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    margin-top: 4rem;
+
+    align-self: center;
 }
+
+/* Random fact that displays to the bottom of the page*/
 
 @keyframes RandomFactLoading {
     0%{
@@ -80,23 +102,30 @@
     }
 }
 
-
 .RandomFact{
     font-weight: lighter;
-    margin-bottom: 5rem;
+    font-size: 2.25rem;
+    
     width: fit-content;
-    color: #D7D7D7;
     max-width: 70%;
+    
+    
+    color: #D7D7D7;
     background-color: rgba(255, 255, 255, 0.08);
-    border-radius: 15px;
+
+    margin-bottom: 5rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
     padding-left: 2rem;
-    justify-self: flex-end;
-    font-size: 2.25rem;
+    padding-right: 5px;
+
     animation: RandomFactLoading 500ms;
+
     position: absolute;
     top: 70%;
     left: -20px;
-    
+
+    border-radius: 15px;
+    border: 1px solid rgba(236, 230, 230, 0.12);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    
 }

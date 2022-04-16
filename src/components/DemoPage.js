@@ -154,7 +154,7 @@ export default function DemoPage() {
                 IsEverythingOk = false
             }
         }
-        IsEverythingOk = true
+        
         return IsEverythingOk
     }
 
@@ -167,7 +167,7 @@ export default function DemoPage() {
                 viewBox="0 0 273 156"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className={styles.svg}
+                className={styles.BackButtonSvg}
             >
                 
                 <path
@@ -195,16 +195,16 @@ export default function DemoPage() {
         <div className={styles.MainContentContainer}>
         
             <div className={styles.ButtonsContainer}>
-                <button onClick={()=>{ChangeAssignment("1");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.b1}>Úloha 1</button>
-                <button onClick={()=>{ChangeAssignment("2");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.b2}>Úloha 2</button>
-                <button onClick={()=>{ChangeAssignment("3"); ChangeCheck("1");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.b3}>Úloha 3</button>
+                <button onClick={()=>{ChangeAssignment("1");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.AssignmentButton1}>Úloha 1</button>
+                <button onClick={()=>{ChangeAssignment("2");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.AssignmentButton2}>Úloha 2</button>
+                <button onClick={()=>{ChangeAssignment("3"); ChangeCheck("1");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.AssignmentButton3}>Úloha 3</button>
             </div>
 
-            <div className={styles.AssignmentContainer}>
-                <div className={styles.HeadherText}>Zadanie :&nbsp;
-                    {WhichAssignment === "1" ? <span className={styles.HeadherTextNew}>Poskladaj vstupy do vzorcu dýchania</span>:null}
-                    {WhichAssignment === "2" ? <span className={styles.HeadherTextNew}>Poskladaj vstupy do vzorcu fotosyntéza</span>:null}
-                    {WhichAssignment === "3" ? <span className={styles.HeadherTextNew}>Poskladaj vzorec ATP</span>:null}
+            <div className={styles.AssignmentTextContainer}>
+                <div className={styles.AssignmentText}>Zadanie :&nbsp;
+                    {WhichAssignment === "1" ? <span className={styles.AssignmentTextNew}>Poskladaj vstupy do vzorcu dýchania</span>:null}
+                    {WhichAssignment === "2" ? <span className={styles.AssignmentTextNew}>Poskladaj vstupy do vzorcu fotosyntéza</span>:null}
+                    {WhichAssignment === "3" ? <span className={styles.AssignmentTextNew}>Poskladaj vzorec ATP</span>:null}
                 </div>
            
            
@@ -212,8 +212,8 @@ export default function DemoPage() {
             </div>
 
             <div className={styles.MainContentDisplay}>
-                <div className={styles.ChemElem1}>
-                    <div className={styles.ChemElemContent} id={SolvedState !== "solving" ? styles.Chm1 : null}>
+                <div className={styles.ChemElemContainer1}>
+                    <div className={styles.ChemElemContent} id={SolvedState !== "solving" ? styles.ChemElemContainer1_evaluated : null}>
 
                         {Elems1Array.map((elem) => {
                             return(
@@ -228,23 +228,23 @@ export default function DemoPage() {
 
                     </div>
                     <div className={styles.CheckContainer}>
-                        <div className={styles.num} id={WhichIsChecked === "1" ? styles.numselected:null}>1</div>
+                        <div className={styles.NumberOfContainer} id={WhichIsChecked === "1" ? styles.NumberOfContainerSelected:null}>1</div>
 
 
-                        <div className={styles.Check} >
+                        <div className={styles.CorrectAnswerContainer} >
                         {WhichAssignment === "1" ?
-                        <div className={styles.ans1} id={SolvedState === "solved" ? styles.ans1 : null}>
-                            <span className={styles.ans1el1}>
+                        <div className={styles.AssignmentAnswer1} id={SolvedState === "solved" ? styles.AssignmentAnswer1_visible : null}>
+                            <span className={styles.AssignmentAnswer1Element1}>
                                 <Atom text = "H" number="12"  />
                             </span>
-                            <span className={styles.ans1el2}> 
+                            <span className={styles.AssignmentAnswer1Element2}> 
                                 <Atom text = "O" number="6"/>
                             </span>
-                            <span className={styles.ans1el3 }>+</span>
-                            <span className={styles.ans1el4}>
+                            <span className={styles.AssignmentAnswer1Element3}>+</span>
+                            <span className={styles.AssignmentAnswer1Element4}>
                                 <Atom text = "C" number = "6"/>
                             </span>
-                            <span className={styles.ans1el5}>
+                            <span className={styles.AssignmentAnswer1Element5}>
                                 <Atom text = "O" number = "12"/>
                             </span>
                             
@@ -252,18 +252,18 @@ export default function DemoPage() {
                         :null}
 
                         {WhichAssignment === "2" ? 
-                        <div className={styles.ans2} id={SolvedState === "solved" ? styles.ans2 : null}>
-                        <span className={styles.ans2el1}>
+                        <div className={styles.AssignmentAnswer2} id={SolvedState === "solved" ? styles.AssignmentAnswer2_visible : null}>
+                        <span className={styles.AssignmentAnswer2Element1}>
                             <Atom text = "C" number="6"  />
                         </span>
-                        <span className={styles.ans2el2}> 
+                        <span className={styles.AssignmentAnswer2Element2}> 
                             <Atom text = "H" number="12"/>
                         </span>
-                        <span className={styles.ans2el3}>
+                        <span className={styles.AssignmentAnswer2Element3}>
                             <Atom text = "O" number = "6"/>
                         </span>
-                        <span className={styles.ans2el4 }>+</span>
-                        <span className={styles.ans2el5}>
+                        <span className={styles.AssignmentAnswer2Element4 }>+</span>
+                        <span className={styles.AssignmentAnswer2Element5}>
                             <Atom text = "O" number = "12"/>
                         </span>
                         
@@ -271,14 +271,14 @@ export default function DemoPage() {
                         :null}
                         
                         {WhichAssignment === "3" ? 
-                        <svg id={SolvedState === "solved"? styles.Check1 : null} className={styles.Check1} width="473" height="321" viewBox="0 0 473 321" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg id={SolvedState === "solved"? styles.Tick_symbol_visible : null} className={styles.Tick_symbol} width="473" height="321" viewBox="0 0 473 321" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M427.73 0L472.042 52.2011L211.311 273.524L167 221.322L427.73 0Z" fill="#13A53B"/>
                             <path d="M214.094 271.463L155.751 320.388L0.654541 135.433L58.9982 86.5083L214.094 271.463Z" fill="#13A53B"/>
                         </svg>
                          : null}    
         
                         </div>
-                        <div className={styles.Cross} id={SolvedState === "wrong" ? styles.Cross1:null}>
+                        <div className={styles.Cross} id={SolvedState === "wrong" ? styles.Cross_visible:null}>
                             <svg width="304" height="304" viewBox="0 0 304 304" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.796079 52.8272L53.1835 0.562957L303.204 251.173L250.817 303.438L0.796079 52.8272Z" fill="#F83131"/>
                                 <path d="M52.8961 303.398L0.458984 251.184L250.242 0.336182L302.679 52.5506L52.8961 303.398Z" fill="#F83131"/>
@@ -291,12 +291,10 @@ export default function DemoPage() {
                     
                 </div>
 
-                <div className={styles.ChemElem2}>
-                    <div className={styles.num } id={WhichIsChecked === "2" ? styles.numselected:null}>2</div>
-                    
+                <div className={styles.ChemElemContainer2}>
+                    <div className={styles.NumberOfContainer } id={WhichIsChecked === "2" ? styles.NumberOfContainerSelected:null}>2</div>
 
-
-                    <div className={styles.ChemElemContent} id={SolvedState !== "solving" ? styles.Chm2 : null}>
+                    <div className={styles.ChemElemContent} id={SolvedState !== "solving" ? styles.ChemElemContainer2_evaluated : null}>
                         {Elems2Array.map((elem) => {
                                 return(
                                     <div key= {elem.name} className={styles.Atom} style={{margin: elem.margin}}>
@@ -315,7 +313,7 @@ export default function DemoPage() {
 
         </div>
 
-        <div className={styles.Input}>
+        <div className={styles.MainInputContainer}>
         <div className={styles.AddElemContainer}>
             <AddElemDemoPage onClick1={()=>{AddNewElem("H",1)}} onClick2={()=>{AddNewElem("H",2)}} text="H" />
             <AddElemDemoPage onClick1={()=>{AddNewElem("C",1)}} onClick2={()=>{AddNewElem("C",2)}} text="C" />
@@ -325,19 +323,19 @@ export default function DemoPage() {
 
         </div>
 
-        <div className={styles.Buttons}>
-        <div className={styles.FirstOrSecondEl}>
-            <button onClick={()=>{ChangeCheck("1")}} className={styles.bt1} id={ WhichIsChecked === "1" ? styles.bt1_checked : styles.bt1_unchecked} >
+        <div className={styles.OtherButtonsContainer}>
+        <div className={styles.SelectContainerButtonContainer}>
+            <button onClick={()=>{ChangeCheck("1")}} className={styles.SelectContainerButton1} id={ WhichIsChecked === "1" ? styles.SelectContainerButton1_checked : styles.SelectContainerButton1_unchecked} >
                 1
             </button>
-            <button onClick={()=>{ChangeCheck("2")}} className={styles.bt2} disabled={WhichAssignment === "3" ? true :false} id={ WhichIsChecked === "2" ? styles.bt2_checked : styles.bt2_unchecked} >
+            <button onClick={()=>{ChangeCheck("2")}} className={styles.SelectContainerButton2} disabled={WhichAssignment === "3" ? true :false} id={ WhichIsChecked === "2" ? styles.SelectContainerButton2_checked : styles.SelectContainerButton2_unchecked} >
                 2
             </button>
         </div>
 
         <div className={styles.FinalButtonsContainer} >
-            <button className={styles.btagain} onClick={()=>{AddItemToArray1([]);AddItemToArray2([]);SetSolve("solving")}}> Znova </button>
-            <button className={styles.btcheck} onClick={()=>{SetSolve(CheckIfTheInputIsRight() ? "solved":"wrong");}}> Vyhodnoť </button>
+            <button className={styles.ButtonAgain} onClick={()=>{AddItemToArray1([]);AddItemToArray2([]);SetSolve("solving")}}> Znova </button>
+            <button className={styles.ButtonEvaluate} onClick={()=>{SetSolve(CheckIfTheInputIsRight() ? "solved":"wrong");}}> Vyhodnoť </button>
         </div>
         </div>
         </div>

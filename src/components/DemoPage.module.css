@@ -1,104 +1,121 @@
-
-
+/* Main Container */
 .MainContainer{
-
     display: flex;
     flex-direction: column;
     
     background-color: white;
-
-
     
     height: 50rem;
 }
 
+/* Back button section */
+.BackButtonContainer{
+    width:273px;
+    height:156px;
+
+    position: absolute;
+
+    align-self: flex-end;
+}
+
+.BackButtonSvg{
+    z-index: -1;
+}
+
 .BackButton{
-    color: #383838;
     padding-left: 4rem;
     padding-right: 4rem;
     padding-top: 0.75rem;
     padding-bottom: 1rem;
+
     font-size: 1.5rem;
-    background-color: #C7FFC6;
-    box-shadow:4px 2px 4px 1px rgba(0, 0, 0, 0.25);
     font-weight: 600;
+    color: #383838;
+
+    background-color: #C7FFC6;
 
     position: relative;
     bottom: 140px;
     left: 70px;
+
     cursor: pointer;
+
+    border: none;
+    box-shadow:4px 2px 4px 1px rgba(0, 0, 0, 0.25);
 }
+
 .BackButton:hover{
     background-color: #a2d3a1;
-
 }
 
-
-
-
-.BackButtonContainer{
-    width:273px;
-    height:156px;
-    position: absolute;
-    align-self: flex-end;
-    
-}
-
-.svg{
-    z-index: -1;
-}
-
+/* Main Content section */
 .MainContentContainer{
     width: 96%;
     
     align-self: center;
+
     margin-top: 10rem;
 }
 
-
-
-
-
+/* Assignment Buttons section */
 .ButtonsContainer{
     display: flex;
     width: fit-content;
-
-
 }
 
 .Button{
     font-family: "Play Fair Display";
     font-size: 2rem;
+    color: #525151;
+
     padding-left: 3rem;
     padding-right: 2rem;
+
     border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.41);
-    color: #525151;
-    position: relative;
-    cursor: pointer;
 
+    position: relative;
+
+    cursor: pointer;
 }
 
-#b1{
+/* Styling for individual buttons so the stack on each other */
+#AssignmentButton1{
  z-index: 3;
 }
 
-#b2{
+#AssignmentButton2{
     z-index: 2;
     right: 45px;
 }
 
-#b3{
+#AssignmentButton3{
     z-index: 1;
     right: 90px;
 }
 
 
-.AssignmentContainer{
+/* Assignment text section*/
+.AssignmentTextContainer{
     display: flex;
+
     margin-left: 0.5rem;
 }
 
+/* This text never changes (is static) */
+.AssignmentText{
+    font-size: 2rem;
+    font-weight: 200;
+    align-self: center;
+    
+    color: #474646;
+    
+    margin-top: 1rem;
+
+    
+    padding: 1rem;
+    border-radius: 10px;
+}
 
 @keyframes loadingtext {
     0%{
@@ -117,214 +134,52 @@
     }
 }
 
-
-.HeadherText{
-    font-size: 2rem;
-    font-weight: 200;
-    align-self: center;
-    
-    color: #474646;
-    
-    margin-top: 1rem;
-
-    
-    padding: 1rem;
-    border-radius: 10px;
-    
-    
-}
-
-.HeadherTextNew{
+/* This text changes when changing assignments (is dynamic) */
+.AssignmentTextNew{
     animation: loadingtext 1s ease-in;
+
     border-radius: 10px;
+
     padding: 0.5rem;
-    
 }
 
+/* Main content section */
 .MainContentDisplay{
-    margin-top: 2rem;
-    font-size: 2rem;
-    background-color: rgb(226, 226, 226);
-    border-radius: 10px;
-    height: 30rem;
     display: flex;
     flex-direction: column;
+
+    height: 30rem;
+
+    margin-top: 2rem;
+
+    font-size: 2rem;
+
+    background-color: rgb(226, 226, 226);
+
+    border-radius: 10px;   
 }
 
-.ChemElem1{
+/* Main content display is divided into 2 sections */
+/* First section of main content display */
+.ChemElemContainer1{
+    display: flex;
+    flex-direction: column;
+
     height: 50%;
     
     border-bottom: 3px solid #C4C4C4;
-    display: flex;
-    flex-direction: column;
 }
 
-.ChemElem2{
+/* Second section of main content display */
+.ChemElemContainer2{
+    display: flex;
+    flex-direction: column;
+
     height: 50%;
-    display: flex;
-    flex-direction: column;
-    
-    
 }
 
-.ChemElemContent{
-    
-    width: 90%;
-    height: 90%;
-    align-self: center;
-    justify-self: center;
-    display: flex;
-    
-   
-
-    
-    
-}
-
-.num{
-    color: #383838;
-    width: 1.2rem;
-    border-radius: 2px;
-    user-select: none;
-    
-}
-
-#numselected{
-    color: rgb(255, 255, 255);
-   
-    background-color: rgb(0, 157, 255);
-}
-
-.AddElemContainer{
-    display: flex;
-    width: 70%;
-    justify-content: space-between;
-    margin-top: 3rem;
-
-    
-    
-    
-}
-
-.Input{
-    display: flex;
-    
-    width: 96%;
-    justify-self: center;
-    align-self: center;
-}
-
-.FirstOrSecondEl{
-    
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    height: 4rem;
-    background-color:rgba(220, 222, 223, 0.91);
-    border-radius: 20px;
-    
-    
-}
-.Buttons{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    margin-top: 2rem;
-    align-items: center;
-}
-  
-@keyframes changing-slider {
-    0%{
-        background-color: transparent;
-        color: black;
-    }
-
-    100%{
-        background-attachment: rgb(0, 157, 255);
-    }
-}
-
-.bt1,.bt2{
-    border: none;
-    width: 6rem;
-    font-size: 2rem;
-    border-radius: 15px;
-}
-#bt1_checked,#bt2_checked{
-    background-color: rgb(0, 157, 255);
-    color: white;
-    animation: changing-slider 500ms;
-}
-
-
-#bt1_unchecked,#bt2_unchecked{
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.FinalButtonsContainer{
-    display: flex;
-    
-    width: 95%;
-    justify-content: space-evenly;
-    margin-top: 3rem;
-}
-
-.btagain,.btcheck{
-    border: none;
-    font-size: 2.5rem;
-    font-weight: 100;
-    font-family: "Roboto";
-    color: white;
-    border-radius: 10px;
-    padding: 1rem 1rem 0.95rem 0.95rem;
-    cursor: pointer;
-}
-.btcheck{
-    margin-left: 2rem;
-    background: linear-gradient(92.77deg, rgba(86, 213, 241, 0.79) 0%, rgba(14, 120, 219, 0.85) 100%) ;
-       
-}
-
-.btcheck:hover,.btcheck:active{
-    background: linear-gradient(92.77deg, rgba(66, 167, 190, 0.79) 0%, rgba(11, 99, 181, 0.85) 100%) ;
-}
-
-.btagain{
-    background: linear-gradient(92.53deg, #FC3838 3.34%, #FF8A00 97.64%);
-    margin-left: 2rem;
-}
-
-.btagain:hover,.btagain:active{
-    background: linear-gradient(92.53deg, #bc2323 3.34%, #c96e06 97.64%);
-}
-@media screen and (max-width:1375px){
-    .btcheck{
-        margin-left: 0.5rem;
-    }
-    
-}
-
-@keyframes AtomAppearing {
-    0%{
-        opacity: 0;
-        transform: translate(-10px);
-
-    }
-
-    100%{
-        opacity: 100;
-        transform: translate(0px);
-    }
-}
-.Atom{
-    width: 12rem;
-    height: 4rem;
-    margin-top: 2rem;
-    animation: AtomAppearing 1s;
-}
-
-@keyframes Chm1_solving {
+/* Section and animations for when the evaluate button is clicked */
+@keyframes Chem1_evaluated_anim {
     0%{
         opacity: 100%;
     }
@@ -339,12 +194,12 @@
     }
 }
 
-#Chm1{
+#ChemElemContainer1_evaluated{
     opacity: 0;
-    animation: Chm1_solving 500ms;
+    animation: Chem1_evaluated_anim 500ms;
 }
 
-@keyframes Chm2_solving {
+@keyframes Chem2_evlaluated_anim {
     0%{
         opacity: 100%;
     }
@@ -359,194 +214,351 @@
     }
 }
 
-#Chm2{
+#ChemElemContainer2_evaluated{
     opacity: 0;
-    animation: Chm2_solving 500ms;
+    animation: Chem2_evlaluated_anim 500ms;
 }
 
 
+/* Class that is applied to both First and Second section content */
+.ChemElemContent{
+    width: 90%;
+    height: 90%;
 
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
 
+/* Number that signifies which sections is which */
+.NumberOfContainer{
+    color: #383838;
 
-@keyframes checkappearing {
+    width: 1.2rem;
+
+    border-radius: 2px;
+
+    user-select: none;
+}
+
+#NumberOfContainerSelected{
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 157, 255);
+}
+
+/* Chem Elements that appear in display containers */
+@keyframes AtomAppearing {
     0%{
         opacity: 0;
-        transform: translate(0px,-100px);
+        transform: translate(-10px);
+
     }
+
     100%{
         opacity: 100;
+        transform: translate(0px);
     }
-    
 }
 
-.Check{
+.Atom{
+    width: 12rem;
+    height: 4rem;
+
+    margin-top: 2rem;
+
+    animation: AtomAppearing 1s;
+}
+
+
+/* Answers for assignmets */
+.CorrectAnswerContainer{
     position: absolute;
-    
-    
-    
-    z-index: 1;
-    
     top: 350px;
     left: 35%;
-   
     
-    
-    
-
+    z-index: 1;
 }
 
-#Check1{
-    opacity: 100;
-    animation: checkappearing 1s;
+/* Chem equations that appear as answers */
+@keyframes AnswerAppearing {
+    0%{
+        opacity: 0%;
+    }
 
+    80%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
 }
 
-.Check1{
-    opacity: 0;
+
+.AssignmentAnswer1,.AssignmentAnswer1Element1,.AssignmentAnswer1Element2,.AssignmentAnswer1Element3,.AssignmentAnswer1Element4,.AssignmentAnswer1Element5{
+    position: absolute;
+
+    z-index: 1;
 }
-.Cross{
+
+.AssignmentAnswer1{
+    position: absolute;
+    top: 160px;
+
+    opacity: 0%;
+}
+
+.AssignmentAnswer1Element1{
     position: absolute;
     
+    left: -130px;
+    top: 20px;
+}
+
+.AssignmentAnswer1Element2{
+    left: 10px;
+}
+
+.AssignmentAnswer1Element3{
+    font-size: 6rem;
+    color:#403f3f;
+    font-weight: 100;
+
+    top: -5px;
+    left: 130px;
+
+    user-select: none;
+}
+ .AssignmentAnswer1Element4{
+     left: 200px;
+     top: 20px;
+ }
+
+ .AssignmentAnswer1Element5{
+     left: 330px;
+     top: -10px;
+ }
+
+ #AssignmentAnswer1_visible{
+    animation: AnswerAppearing 500ms;
+
+    opacity: 100%;
     
+ }
+
+.AssignmentAnswer2{
+    position: absolute;
+    top: 160px;
+
+    opacity: 0%;
+}
+
+#AssignmentAnswer2_visible{
+    animation: AnswerAppearing 500ms;
+
+    opacity: 100%;
+}
+
+.AssignmentAnswer2Element1,.AssignmentAnswer2Element2,.AssignmentAnswer2Element3,.AssignmentAnswer2Element4,.AssignmentAnswer2Element5{
+    position: absolute;
+}
+
+.AssignmentAnswer2Element1{    
+    left: -130px;
+    top: 20px;
+}
+
+.AssignmentAnswer2Element2{
+    left: 10px;
+}
+
+.AssignmentAnswer2Element3{
+    left: 145px;
+}
+
+.AssignmentAnswer2Element4{
+    font-size: 6rem;
+    color:#403f3f;
+    font-weight: 100;
     
+    user-select: none;
+
+    left: 270px;
+    top: -5px;
+}
+
+.AssignmentAnswer2Element5{
+    left: 350px;
+    top: 15px;
+}
+
+/* Tick symbol that appears when you cant show equation*/
+@keyframes Cross_Or_Tick_Appearing {
+    0%{
+        opacity: 0%;
+        transform: translate(0px,-100px);
+    }
+
+    100%{
+        opacity: 100%;
+    }
+}
+
+#Tick_symbol_visible{
+    opacity: 100%;
+
+    animation: Cross_Or_Tick_Appearing 1s;
+}
+
+.Tick_symbol{
+    opacity: 0;
+}
+
+/* Cross that appears when the input is wrong */
+.Cross{
+    position: absolute;
     
     z-index: 1;
     
     top: 380px;
     left: 40%;
+
     opacity: 0;
 }
 
 
-
-@keyframes crossappearing {
-    0%{
-        opacity: 0%;
-        transform: translate(0px,-100px);
-    }
-
-    100%{
-        opacity: 100%;
-    }
-}
-
-#Cross1{
+#Cross_visible{
     animation-delay: 2s;
-    animation: crossappearing 1s;
+    animation: Cross_Or_Tick_Appearing 1s;
+
     opacity: 100;
 }
 
 
-@keyframes AtomsAppearing {
+
+/* Input Section where everything that can interact with main content display is located */
+.MainInputContainer{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    
+    width: 96%;
+}
+
+/* Input Content */
+
+.AddElemContainer{
+    display: flex;
+    justify-content: space-between;
+
+    width: 70%;
+
+    margin-top: 3rem;
+}
+
+/* Other buttons*/
+.OtherButtonsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 30%;
+
+    margin-top: 2rem;
+}
+
+/* Button that select if you are adding to the first or second display content container */
+.SelectContainerButtonContainer{
+    display: flex;
+    justify-content: center;
+
+    width: fit-content;
+    height: 4rem;
+
+    background-color:rgba(220, 222, 223, 0.91);
+
+    border-radius: 20px;
+}
+
+@keyframes changing-slider {
     0%{
-        opacity: 0%;
-        
+        background-color: transparent;
+        color: black;
     }
 
-    80%{
-        opacity: 0%;
-        
-    }
     100%{
-        opacity: 100%;
+        background-attachment: rgb(0, 157, 255);
     }
 }
 
-.ans1,.ans1el1,.ans1el2,.ans1el3,.ans1el4,.ans1el5{
-    position: absolute;
-    z-index: 1;
+.SelectContainerButton1,.SelectContainerButton2{
+    border: none;
+
+    width: 6rem;
+
+    font-size: 2rem;
+
+    border-radius: 15px;
+}
+#SelectContainerButton1_checked,#SelectContainerButton2_checked{
+    background-color: rgb(0, 157, 255);
+    color: white;
+    animation: changing-slider 500ms;
 }
 
-.ans1{
-    position: absolute;
-    top: 160px;
-    opacity: 0%;
+
+#SelectContainerButton1_unchecked,#SelectContainerButton2_unchecked{
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* Again and Evaluate buttons section */
+.FinalButtonsContainer{
+    display: flex;
+    justify-content: space-evenly;
     
-    
+    width: 95%;
+
+    margin-top: 3rem;
 }
 
-.ans1el1{
-    position: absolute;
-    
-    left: -130px;
-    top: 20px;
-}
-
-.ans1el2{
-    left: 10px;
-}
-
-.ans1el3{
-    font-size: 6rem;
-    color:#403f3f;
+.ButtonAgain,.ButtonEvaluate{
+    font-size: 2.5rem;
     font-weight: 100;
-    top: -5px;
-    left: 130px;
-    user-select: none;
+    font-family: "Roboto";
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 1rem 1rem 0.95rem 0.95rem;
+
+    cursor: pointer;
 }
- .ans1el4{
-     left: 200px;
-     top: 20px;
- }
+.ButtonEvaluate{
+    margin-left: 2rem;
 
- .ans1el5{
-     left: 330px;
-     top: -10px;
- }
-
- #ans1{
-    animation: AtomsAppearing 500ms;
-    opacity: 100%;
-    
- }
-
-.ans2{
-    position: absolute;
-    top: 160px;
-    opacity: 0%;
-    
-    
+    background: linear-gradient(92.77deg, rgba(86, 213, 241, 0.79) 0%, rgba(14, 120, 219, 0.85) 100%) ;
 }
 
-#ans2{
-    animation: AtomsAppearing 500ms;
-    opacity: 100%;
-
+.ButtonEvaluate:hover,.ButtonEvaluate:active{
+    background: linear-gradient(92.77deg, rgba(66, 167, 190, 0.79) 0%, rgba(11, 99, 181, 0.85) 100%) ;
 }
 
-.ans2el1{
-    position: absolute;
-    
-    left: -130px;
-    top: 20px;
+.ButtonAgain{
+    background: linear-gradient(92.53deg, #FC3838 3.34%, #FF8A00 97.64%);
+
+    margin-left: 2rem;
 }
 
-.ans2el2{
-    position: absolute;
-    left: 10px;
-
+.ButtonAgain:hover,.ButtonAgain:active{
+    background: linear-gradient(92.53deg, #bc2323 3.34%, #c96e06 97.64%);
 }
 
-.ans2el3{
-    position: absolute;
-    left: 145px;
+/* Media Queries for responsivity */
 
-}
-
-.ans2el4{
-    position: absolute;
-    font-size: 6rem;
-    color:#403f3f;
-    font-weight: 100;
-    
-    user-select: none;
-    left: 270px;
-    top: -5px;
-}
-
-.ans2el5{
-    position: absolute;
-    left: 350px;
-    top: 15px;
+@media screen and (max-width:1375px){
+    .ButtonEvaluate{
+        margin-left: 0.5rem;
+    }
 }
 

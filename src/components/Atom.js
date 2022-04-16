@@ -38,10 +38,6 @@ export default function Atom(props){
             <div className={styles.number}>
                 {props.number}
             </div>
-            
-
-
         </div>
-
     )
 }
