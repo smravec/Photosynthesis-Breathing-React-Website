@@ -31,6 +31,9 @@
 /* Buttons */
 /* Quiz button */
 .QuizButton{
+    display: flex;
+    justify-content: center;
+
     padding-left: 5rem;
     padding-right: 5rem;
     padding-top: 0.5rem;
@@ -45,6 +48,7 @@
     cursor: pointer;
 
     border: 1px solid rgba(236, 230, 230, 0.12);
+    border-radius: 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -55,6 +59,9 @@
 
 /* Other buttons */
 .OtherButton{
+    display: flex;
+    justify-content: center;
+
     font-weight: 300;
     font-size: 2.25rem;
     cursor: pointer;
@@ -69,7 +76,9 @@
     color: rgb(243, 239, 239);
 
     border: 1px solid rgba(236, 230, 230, 0.12);
+    border-radius: 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
 }
 
 .OtherButton:hover, .OtherButton:active{
@@ -129,3 +138,114 @@
     border: 1px solid rgba(236, 230, 230, 0.12);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    
 }
+
+/* Media Queries */
+@media screen and (max-width:950px){
+    .QuizButton,.OtherButton{
+        font-size: 2.5rem;
+    }
+
+    .RandomFact{
+        font-size: 4vh;
+    }
+}
+
+@media screen and (max-width:850px){
+    .QuizButton,.OtherButton{
+        padding: 0.5rem 5vw 0.5rem 5vw;
+
+        font-size: 2.5rem;
+
+        border-radius: 12px;
+    }
+    .QuizButton{
+        padding: 0.5rem 6vw 0.5rem 6vw;
+    }
+
+    .Line{
+        margin-top: 2rem;
+    }
+    .RandomFact{
+        max-width: 80%;
+
+        font-size: 4vh;
+    }
+}
+
+@media screen and (max-width:650px){
+    .QuizButton,.OtherButton{
+        padding: 0.5rem 5vw 0.5rem 5vw;
+
+        font-size: 3.5vh;
+
+        border-radius: 10px;
+    }
+    .QuizButton{
+        padding: 0.5rem 6vw 0.5rem 6vw;
+    }
+
+    .Line{
+        margin-top: 2rem;
+    }
+    .RandomFact{
+        max-width: 80%;
+
+        font-size: 4vh;
+    }
+}
+
+
+
+@media screen and (max-width:450px){
+    .QuizButton,.OtherButton{
+        padding: 0.5rem 5vw 0.5rem 5vw;
+
+        font-size: 3.5vh;
+
+        border-radius: 8px;
+    }
+    .QuizButton{
+        padding: 0.5rem 7.5vw 0.5rem 7.5vw;
+    }
+
+    .Line{
+        margin-top: 1.25rem;
+    }
+
+    .RandomFact{
+        max-width: 85%;
+
+        font-size: 3.5vh;
+    }
+}
+
+@media screen and ((max-width:450px) and (max-height: 950px )){
+    .QuizButton,.OtherButton{
+        font-size: 3vh;
+
+        border-radius: 12px;
+    }
+
+    .RandomFact{
+        top: 60%;
+
+        font-size: 2.2rem;
+    }
+
+}
+
+@media screen and (max-width:380px) and (max-height: 680px ){
+    .QuizButton,.OtherButton{
+        font-size: 3.5vh;
+
+        border-radius: 12px;
+    }
+
+    .RandomFact{
+        top: 65%;
+
+        font-size: 4.75vh;
+    }
+
+}
+
