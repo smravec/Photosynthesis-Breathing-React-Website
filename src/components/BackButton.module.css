@@ -1,0 +1,136 @@
+.BackButtonContainer{
+    width: 28vw;
+    min-width: 180px;
+    max-width: 270px;
+    
+    align-self: flex-end;
+    
+}
+
+.SvgContainer{
+    display: inline-block;
+
+    position: relative;
+
+    width: 100%;
+
+    padding-bottom: 58%;
+
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.BackButtonSvg{
+    display: inline-block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 0;
+    
+}
+
+.BackButton{
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 0.75rem;
+    padding-bottom: 1rem;
+
+    font-family: "Playfair Display", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #383838;
+
+    background-color: #C7FFC6;
+
+    position: relative;
+    top:-63%;
+    left: 25%;
+    
+    cursor: pointer;
+
+    border: none;
+    border-radius: 20px;
+    box-shadow:4px 2px 4px 1px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+.BackButton:hover{
+    background-color: #a2d3a1;
+}
+
+/* Media Queries */
+
+@media screen and (max-width:960px){
+    .BackButton{
+        padding-top: 0.7rem;
+        padding-bottom: 1rem;
+        padding-left: 2.95rem;
+        padding-right: 2.75rem;
+
+        font-size: 1.35rem;
+
+        border-radius: 15px;
+
+        position: absolute;
+        top: 20px;
+        left: 81%;
+    }
+    
+}
+
+@media screen and (max-width:820px){
+    .BackButton{
+        padding-top: 0.5rem;
+        padding-bottom: 0.8rem;
+        padding-left: 2.75rem;
+        padding-right: 2.75rem;
+
+        font-size: 1.25rem;
+
+        border-radius: 15px;
+
+        position: absolute;
+        top: 20px;
+        left: 80%;
+    }
+    
+}
+
+
+@media screen and (max-width:700px){
+    .BackButton{
+        padding-top: 0.5rem;
+        padding-bottom: 0.8rem;
+        padding-left: 2.75rem;
+        padding-right: 2.75rem;
+
+        font-size: 1.25rem;
+
+        border-radius: 15px;
+
+        position: absolute;
+        top: 20px;
+        left: 78%;
+    }
+    
+}
+
+@media screen and (max-width:650px){
+    .BackButton{
+        padding-top: 0.5rem;
+        padding-bottom: 0.75rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+
+        font-size: 1.25rem;
+
+        border-radius: 10px;
+
+        position: relative;
+        top: -55%;
+        left: 25%;
+        
+    }
+}

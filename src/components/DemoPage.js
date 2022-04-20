@@ -1,11 +1,12 @@
 import styles from "./DemoPage.module.css";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Atom from "./Atom";
 import AddElemDemoPage from "./AddElemDemoPage";
+import BackButton from "./BackButton";
 
 export default function DemoPage() {
-    const redirect = useNavigate();
+    //const redirect = useNavigate();
     const [WhichIsChecked, ChangeCheck] = useState("1")
     const [WhichAssignment,ChangeAssignment] = useState("1")
     const [Elems1Array, AddItemToArray1] = useState([])
@@ -159,37 +160,7 @@ export default function DemoPage() {
 
   return (
     <div className={styles.MainContainer}>
-      <div className={styles.BackButtonContainer}>
-            <svg
-                width="273"
-                height="156"
-                viewBox="0 0 273 156"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className={styles.BackButtonSvg}
-            >
-                
-                <path
-                d="M0 0H273V156L189.15 117.059L45.825 86.3782L16.575 40.829L0 0Z"
-                fill="url(#paint0_linear_25_2)"
-                />
-                <defs>
-                <linearGradient
-                    id="paint0_linear_25_2"
-                    x1="4.14375"
-                    y1="4.0121"
-                    x2="261.403"
-                    y2="163.086"
-                    gradientUnits="userSpaceOnUse"
-                >
-                    <stop stop-color="#44B5A0" />
-                    <stop offset="1" stop-color="#74DE72" />
-                </linearGradient>
-                </defs>
-            
-            </svg>
-            <button className={styles.BackButton} onClick={()=> redirect("/")}>Back</button>
-        </div>
+      <BackButton/>
 
         <div className={styles.MainContentContainer}>
         
