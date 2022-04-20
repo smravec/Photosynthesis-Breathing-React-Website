@@ -1,4 +1,3 @@
-import Button1 from "./Button1"
 import styles from "./HomePage.module.css"
 import {useNavigate} from "react-router-dom"
 
@@ -24,27 +23,30 @@ export default function HomePage(){
     ]
     const RandomFact = RandomFacts[Math.floor(Math.random() * RandomFacts.length)]
 
-
+    
     return(
         <div className={styles.MainContainer}>
+            
 
-        <div className={styles.MainContainer1}>
+        <div className={styles.NavBarContainer}>
             <div className={styles.ButtonsContainer}>
 
-                <Button1 text = "Source" className={styles.OtherButton} onClick = {() => window.open("https://github.com/smravec/Photosynthesis-Breathing-react-website","_blank")} ></Button1>
+                <button className={styles.OtherButton} id={styles.SourceButton} onClick = {() => window.open("https://github.com/smravec/Photosynthesis-breathing-website","_blank")} >Source</button>
 
-                <Button1 text = "Demo" className={styles.OtherButton} onClick = {() => redirect("/demo")} ></Button1>
+                <button className={styles.OtherButton} id={styles.DemoButton} onClick = {() => redirect("/demo")} >Demo</button>
 
-                <Button1 text = "Quiz" className={styles.QuizButton} onClick = {() => redirect("/quiz")} ></Button1>
+                <button className={styles.QuizButton} onClick = {() => redirect("/quiz")} >Quiz</button>
                 
             </div>
 
             <div className={styles.Line}/>
         </div>
-            <div className={styles.RandomFact}>
-                {RandomFact}
+
+            <div className={styles.ContentContainer}>
+                <div className={styles.RandomFact}>
+                    {RandomFact}
+                </div>
             </div>
-        
         </div>
 
     )

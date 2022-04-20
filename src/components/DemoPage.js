@@ -1,5 +1,4 @@
 import styles from "./DemoPage.module.css";
-import Button1 from "./Button1";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Atom from "./Atom";
@@ -189,7 +188,7 @@ export default function DemoPage() {
                 </defs>
             
             </svg>
-            <Button1 text = "Back" className={styles.BackButton} onClick={()=> redirect("/")}></Button1>
+            <button className={styles.BackButton} onClick={()=> redirect("/")}>Back</button>
         </div>
 
         <div className={styles.MainContentContainer}>
