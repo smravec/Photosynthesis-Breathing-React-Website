@@ -5,6 +5,10 @@ import Atom from "./Atom";
 import AddElemDemoPage from "./AddElemDemoPage";
 import BackButton from "./BackButton";
 
+import {FiCheckCircle} from "react-icons/fi"
+import {ImCross} from "react-icons/im"
+
+
 export default function DemoPage() {
     //const redirect = useNavigate();
     const [WhichIsChecked, ChangeCheck] = useState("1")
@@ -68,7 +72,7 @@ export default function DemoPage() {
         else{
             const randomMargin = Math.random() * 10 / 2
             
-            const NewElem = {name:ElemName, count:AddingOneOrTwo.toString() ,margin:randomMargin + "rem 0px 0px 0px"   }
+            const NewElem = {name:ElemName, count:AddingOneOrTwo.toString() ,margin:randomMargin + "rem 10% 0px 0px"   }
             
             if(WhichIsChecked ==="1"){
                 AddItemToArray1([...Elems1Array,NewElem])
@@ -182,93 +186,43 @@ export default function DemoPage() {
             </div>
 
             <div className={styles.MainContentDisplay}>
+
+                
+
                 <div className={styles.ChemElemContainer1}>
                     <div className={styles.ChemElemContent} id={SolvedState !== "solving" ? styles.ChemElemContainer1_evaluated : null}>
 
                         {Elems1Array.map((elem) => {
                             return(
-                                <div key= {elem.name} className={styles.Atom} style={{margin: elem.margin}}>
-                                <Atom key={elem.name} text = {elem.name} number={elem.count} style={{background:elem.color}}/>
+                                <div key= {elem.name} className={styles.UserAddedAtom} style={{margin: elem.margin}}>
+                                <div className={styles.AtomContainer}>
+                                    <Atom className={styles.Atom} key={elem.name} text = {elem.name} number={elem.count} style={{background:elem.color}}/>
+                                </div>
                                 </div>
                             )
                             
                         })}
-                        
-                        
-
                     </div>
+
                     <div className={styles.CheckContainer}>
                         <div className={styles.NumberOfContainer} id={WhichIsChecked === "1" ? styles.NumberOfContainerSelected:null}>1</div>
 
-
-                        <div className={styles.CorrectAnswerContainer} >
-                        {WhichAssignment === "1" ?
-                        <div className={styles.AssignmentAnswer1} id={SolvedState === "solved" ? styles.AssignmentAnswer1_visible : null}>
-                            <span className={styles.AssignmentAnswer1Element1}>
-                                <Atom text = "H" number="12"  />
-                            </span>
-                            <span className={styles.AssignmentAnswer1Element2}> 
-                                <Atom text = "O" number="6"/>
-                            </span>
-                            <span className={styles.AssignmentAnswer1Element3}>+</span>
-                            <span className={styles.AssignmentAnswer1Element4}>
-                                <Atom text = "C" number = "6"/>
-                            </span>
-                            <span className={styles.AssignmentAnswer1Element5}>
-                                <Atom text = "O" number = "12"/>
-                            </span>
-                            
-                        </div>
-                        :null}
-
-                        {WhichAssignment === "2" ? 
-                        <div className={styles.AssignmentAnswer2} id={SolvedState === "solved" ? styles.AssignmentAnswer2_visible : null}>
-                        <span className={styles.AssignmentAnswer2Element1}>
-                            <Atom text = "C" number="6"  />
-                        </span>
-                        <span className={styles.AssignmentAnswer2Element2}> 
-                            <Atom text = "H" number="12"/>
-                        </span>
-                        <span className={styles.AssignmentAnswer2Element3}>
-                            <Atom text = "O" number = "6"/>
-                        </span>
-                        <span className={styles.AssignmentAnswer2Element4 }>+</span>
-                        <span className={styles.AssignmentAnswer2Element5}>
-                            <Atom text = "O" number = "12"/>
-                        </span>
-                        
-                    </div>
-                        :null}
-                        
-                        {WhichAssignment === "3" ? 
-                        <svg id={SolvedState === "solved"? styles.Tick_symbol_visible : null} className={styles.Tick_symbol} width="473" height="321" viewBox="0 0 473 321" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M427.73 0L472.042 52.2011L211.311 273.524L167 221.322L427.73 0Z" fill="#13A53B"/>
-                            <path d="M214.094 271.463L155.751 320.388L0.654541 135.433L58.9982 86.5083L214.094 271.463Z" fill="#13A53B"/>
-                        </svg>
-                         : null}    
-        
-                        </div>
-                        <div className={styles.Cross} id={SolvedState === "wrong" ? styles.Cross_visible:null}>
-                            <svg width="304" height="304" viewBox="0 0 304 304" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0.796079 52.8272L53.1835 0.562957L303.204 251.173L250.817 303.438L0.796079 52.8272Z" fill="#F83131"/>
-                                <path d="M52.8961 303.398L0.458984 251.184L250.242 0.336182L302.679 52.5506L52.8961 303.398Z" fill="#F83131"/>
-                            </svg>
-                            
-
-                        </div>
                     </div>
                     
                     
                 </div>
 
                 <div className={styles.ChemElemContainer2}>
-                    <div className={styles.NumberOfContainer } id={WhichIsChecked === "2" ? styles.NumberOfContainerSelected:null}>2</div>
+
+                        <div className={styles.NumberOfContainer } id={WhichIsChecked === "2" ? styles.NumberOfContainerSelected:null}>2</div>
 
                     <div className={styles.ChemElemContent} id={SolvedState !== "solving" ? styles.ChemElemContainer2_evaluated : null}>
                         {Elems2Array.map((elem) => {
                                 return(
-                                    <div key= {elem.name} className={styles.Atom} style={{margin: elem.margin}}>
-                                    <Atom key={elem.name} text = {elem.name} number={elem.count} style={{background:elem.color}}/>
+                                    <div key= {elem.name} className={styles.UserAddedAtom} style={{margin: elem.margin}}>
+                                    <div className={styles.AtomContainer}>
+                                        <Atom key={elem.name} className={styles.Atom} text = {elem.name} number={elem.count} style={{background:elem.color}}/>
+                                    </div>
                                 </div>
                                 )
                                 
@@ -277,7 +231,17 @@ export default function DemoPage() {
                     </div>
 
                 </div>
-                
+
+                <div className={styles.CorrectAnswerContainer} id={SolvedState !== "solving"  ? styles.CorrectAnswerContainer_visible : null } >
+                        
+                        { SolvedState === "solved" ? <FiCheckCircle className={styles.CheckSvg} /> : null }
+
+                        { SolvedState === "wrong" ? <ImCross className={styles.CrossSvg} /> : null}
+
+                </div>
+
+
+
             </div>
 
 

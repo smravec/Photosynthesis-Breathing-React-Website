@@ -1,4 +1,12 @@
-
+/* Global Atom classes */
+.Atom{
+    width: 100px;
+    height: 100px;
+}
+.AtomContainer{
+    width: 100px;
+    height: 100px;
+}
 
 /* Main Container */
 .MainContainer{
@@ -18,8 +26,6 @@
     position: absolute;
 
     align-self: flex-end;
-
-    
 }
 
 .BackButtonSvg{
@@ -161,7 +167,9 @@
 
     background-color: rgb(226, 226, 226);
 
-    border-radius: 10px;   
+    border-radius: 10px;
+    
+    position: relative;
 }
 
 /* Main content display is divided into 2 sections */
@@ -235,11 +243,13 @@
     justify-self: center;
 }
 
+
 /* Number that signifies which sections is which */
 .NumberOfContainer{
     color: #383838;
 
     width: 1.2rem;
+    height: fit-content;
 
     border-radius: 2px;
 
@@ -265,179 +275,58 @@
     }
 }
 
-.Atom{
-    width: 12rem;
-    height: 4rem;
-
-    margin-top: 2rem;
+.UserAddedAtom{
 
     animation: AtomAppearing 1s;
 }
 
 
-/* Answers for assignmets */
+/* Check that appears when the Answer is correct */
+@keyframes CheckAppearing {
+    0%{
+        transform: translate(0px, -70px);
+        opacity: 0%;
+    }
+
+    
+
+    100%{
+        transform: translate(0px, 0px);
+        opacity: 100%;
+    }
+    
+}
+
 .CorrectAnswerContainer{
     position: absolute;
-    top: 350px;
-    left: 35%;
-    
-    z-index: 1;
-}
+    top: 100px;
 
-/* Chem equations that appear as answers */
-@keyframes AnswerAppearing {
-    0%{
-        opacity: 0%;
-    }
-
-    80%{
-        opacity: 0%;
-    }
-    100%{
-        opacity: 100%;
-    }
-}
-
-
-.AssignmentAnswer1,.AssignmentAnswer1Element1,.AssignmentAnswer1Element2,.AssignmentAnswer1Element3,.AssignmentAnswer1Element4,.AssignmentAnswer1Element5{
-    position: absolute;
+    align-self: center;
 
     z-index: 1;
-}
-
-.AssignmentAnswer1{
-    position: absolute;
-    top: 160px;
 
     opacity: 0%;
 }
 
-.AssignmentAnswer1Element1{
-    position: absolute;
-    
-    left: -130px;
-    top: 20px;
-}
-
-.AssignmentAnswer1Element2{
-    left: 10px;
-}
-
-.AssignmentAnswer1Element3{
-    font-size: 6rem;
-    color:#403f3f;
-    font-weight: 100;
-
-    top: -5px;
-    left: 130px;
-
-    user-select: none;
-}
- .AssignmentAnswer1Element4{
-     left: 200px;
-     top: 20px;
- }
-
- .AssignmentAnswer1Element5{
-     left: 330px;
-     top: -10px;
- }
-
- #AssignmentAnswer1_visible{
-    animation: AnswerAppearing 500ms;
-
-    opacity: 100%;
-    
- }
-
-.AssignmentAnswer2{
-    position: absolute;
-    top: 160px;
-
-    opacity: 0%;
-}
-
-#AssignmentAnswer2_visible{
-    animation: AnswerAppearing 500ms;
-
-    opacity: 100%;
-}
-
-.AssignmentAnswer2Element1,.AssignmentAnswer2Element2,.AssignmentAnswer2Element3,.AssignmentAnswer2Element4,.AssignmentAnswer2Element5{
-    position: absolute;
-}
-
-.AssignmentAnswer2Element1{    
-    left: -130px;
-    top: 20px;
-}
-
-.AssignmentAnswer2Element2{
-    left: 10px;
-}
-
-.AssignmentAnswer2Element3{
-    left: 145px;
-}
-
-.AssignmentAnswer2Element4{
-    font-size: 6rem;
-    color:#403f3f;
-    font-weight: 100;
-    
-    user-select: none;
-
-    left: 270px;
-    top: -5px;
-}
-
-.AssignmentAnswer2Element5{
-    left: 350px;
-    top: 15px;
-}
-
-/* Tick symbol that appears when you cant show equation*/
-@keyframes Cross_Or_Tick_Appearing {
-    0%{
-        opacity: 0%;
-        transform: translate(0px,-100px);
-    }
-
-    100%{
-        opacity: 100%;
-    }
-}
-
-#Tick_symbol_visible{
+#CorrectAnswerContainer_visible{
     opacity: 100%;
 
-    animation: Cross_Or_Tick_Appearing 1s;
+    animation: CheckAppearing 750ms ease-out;
 }
 
-.Tick_symbol{
-    opacity: 0;
+.CheckSvg{
+    width: 15rem;
+    height: 15rem;
+
+    color: rgb(59, 152, 34);
 }
 
-/* Cross that appears when the input is wrong */
-.Cross{
-    position: absolute;
-    
-    z-index: 1;
-    
-    top: 380px;
-    left: 40%;
+.CrossSvg{
+    width: 15rem;
+    height: 15rem;
 
-    opacity: 0;
+    color: rgb(219, 43, 33);
 }
-
-
-#Cross_visible{
-    animation-delay: 2s;
-    animation: Cross_Or_Tick_Appearing 1s;
-
-    opacity: 100;
-}
-
 
 /* Input Section where everything that can interact with main content display is located */
 .MainInputContainer{
@@ -564,13 +453,22 @@
 }
 
 /* Media Queries for responsivity */
+/* Quick fixes */
+
+
+
 /* Tablet Version */
+@media screen and (max-width:1000px){
+    
+}
+
 /* Mobile Version */
 
 
 @media screen and (max-width:1375px){
     .ButtonEvaluate{
         margin-left: 0.5rem;
+        
     }
 }
 
