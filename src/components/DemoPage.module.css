@@ -86,6 +86,7 @@
     width: 96%;
 }
 
+
 .Button{
     font-family: "Play Fair Display";
     font-size: 2rem;
@@ -118,6 +119,17 @@
     right: 90px;
 }
 
+#AssignmentButton1::before{
+    content: "Úloha 1";
+}
+
+#AssignmentButton2::before{
+    content: "Úloha 2";
+}
+
+#AssignmentButton3::before{
+    content: "Úloha 3";
+}
 
 /* Assignment text section*/
 .AssignmentTextContainer{
@@ -500,9 +512,6 @@
         margin-top: 2rem;
         
         width: 100%;
-        
-        
-        
     }
 
     #AssignmentButton1{
@@ -512,29 +521,53 @@
        
        #AssignmentButton2{
            z-index: 2;
-           right: 0px;
+           right: 30px;
        }
        
        #AssignmentButton3{
            z-index: 1;
-           right: 0px;
+           right: 50px;
        }
+
+       #AssignmentButton1::before{
+           content: "1";
+       }
+
+       #AssignmentButton2::before{
+        content: "2";
+    }
+
+    #AssignmentButton3::before{
+        content: "3";
+    }
 
 
     .Button{
         
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         height: 2.5rem;
         border-radius: 12px ;
         
         width: 100%;
-        max-width: 10rem;
-        
-        
-        
+        max-width: 10rem; 
     }
 
+
     .AssignmentText{
+        display: flex;
+        flex-direction: column;
+
+        font-size: 1.8rem;
+
+        align-content: flex-start;
+
+        width: fit-content;
+    }
+
+    .AssignmentTextNew{
+        padding: 0;
+        margin: 0;
+
         font-size: 1.5rem;
     }
 
@@ -617,6 +650,12 @@
 @media screen and (max-width: 650px){
     .UserAddedAtom{
         margin-left: 3%;
+    }
+}
+
+@media screen and (max-width: 456px){
+    .AssignmentTextNew{
+        font-size: 1.4rem;
     }
 }
 

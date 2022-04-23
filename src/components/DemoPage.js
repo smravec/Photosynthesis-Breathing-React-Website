@@ -169,9 +169,9 @@ export default function DemoPage() {
         <div className={styles.MainContentContainer}>
         
             <div className={styles.ButtonsContainer}>
-                <button onClick={()=>{ChangeAssignment("1");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.AssignmentButton1}>Úloha 1</button>
-                <button onClick={()=>{ChangeAssignment("2");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.AssignmentButton2}>Úloha 2</button>
-                <button onClick={()=>{ChangeAssignment("3"); ChangeCheck("1");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.AssignmentButton3}>Úloha 3</button>
+                <button onClick={()=>{ChangeAssignment("1");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.AssignmentButton1}></button>
+                <button onClick={()=>{ChangeAssignment("2");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.AssignmentButton2}></button>
+                <button onClick={()=>{ChangeAssignment("3"); ChangeCheck("1");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.AssignmentButton3}></button>
             </div>
 
             <div className={styles.AssignmentTextContainer}>
