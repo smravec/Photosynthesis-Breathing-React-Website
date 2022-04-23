@@ -70,9 +70,9 @@ export default function DemoPage() {
             }
         }
         else{
-            const randomMargin = Math.random() * 10 / 2
+            const randomMargin = Math.random() * 12 / 2
             
-            const NewElem = {name:ElemName, count:AddingOneOrTwo.toString() ,margin:randomMargin + "rem 10% 0px 0px"   }
+            const NewElem = {name:ElemName, count:AddingOneOrTwo.toString() ,margin:randomMargin + "rem"   }
             
             if(WhichIsChecked ==="1"){
                 AddItemToArray1([...Elems1Array,NewElem])
@@ -182,7 +182,6 @@ export default function DemoPage() {
                 </div>
            
            
-           
             </div>
 
             <div className={styles.MainContentDisplay}>
@@ -194,7 +193,7 @@ export default function DemoPage() {
 
                         {Elems1Array.map((elem) => {
                             return(
-                                <div key= {elem.name} className={styles.UserAddedAtom} style={{margin: elem.margin}}>
+                                <div key= {elem.name} className={styles.UserAddedAtom} style={{"margin-top": elem.margin}}>
                                 <div className={styles.AtomContainer}>
                                     <Atom className={styles.Atom} key={elem.name} text = {elem.name} number={elem.count} style={{background:elem.color}}/>
                                 </div>
@@ -219,7 +218,7 @@ export default function DemoPage() {
                     <div className={styles.ChemElemContent} id={SolvedState !== "solving" ? styles.ChemElemContainer2_evaluated : null}>
                         {Elems2Array.map((elem) => {
                                 return(
-                                    <div key= {elem.name} className={styles.UserAddedAtom} style={{margin: elem.margin}}>
+                                    <div key= {elem.name} className={styles.UserAddedAtom} style={{"margin-top": elem.margin}}>
                                     <div className={styles.AtomContainer}>
                                         <Atom key={elem.name} className={styles.Atom} text = {elem.name} number={elem.count} style={{background:elem.color}}/>
                                     </div>

@@ -8,6 +8,18 @@
     height: 100px;
 }
 
+/* Atom text and number size */
+.Atom div:first-child{
+    font-size: 1.9rem;
+    transform:translate(38px, 28px);
+}
+
+.Atom div:last-child{
+    font-size: 1.3rem;
+
+    transform: translate(60px,14px)
+}
+
 /* Main Container */
 .MainContainer{
     display: flex;
@@ -65,12 +77,13 @@
     width: 96%;
     
     align-self: center;
+    
 }
 
 /* Assignment Buttons section */
 .ButtonsContainer{
     display: flex;
-    width: fit-content;
+    width: 96%;
 }
 
 .Button{
@@ -110,7 +123,7 @@
 .AssignmentTextContainer{
     display: flex;
 
-    margin-left: 0.5rem;
+    
 }
 
 /* This text never changes (is static) */
@@ -240,7 +253,6 @@
 
     display: flex;
     align-self: center;
-    justify-self: center;
 }
 
 
@@ -272,11 +284,15 @@
     100%{
         opacity: 100;
         transform: translate(0px);
+        
     }
 }
 
 .UserAddedAtom{
     animation: AtomAppearing 1s;
+    margin-left: 10%;
+    
+    
 }
 
 
@@ -348,6 +364,7 @@
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
     row-gap: 2rem;
+    column-gap: 1.25rem;
 
     margin-top: 2rem;
 }
@@ -359,8 +376,6 @@
     align-items: center;
 
     justify-content: space-around;
-
-    max-height: 20rem;
 }
 
 /* Button that select if you are adding to the first or second display content container */
@@ -453,6 +468,123 @@
 }
 
 /* Media Queries for responsivity */
+
+/* Tablet Version */
+@media screen and (max-width:800px){
+    .MainContentContainer{
+        width: 98%;
+        
+    }
+
+    .Atom,.AtomContainer{
+        width: 70px;
+        height: 70px;
+    }
+
+    .Atom div:first-child{
+        font-size: 1.3rem;
+        transform:translate(27px, 21px);
+    }
+    
+    .Atom div:last-child{
+        font-size: 1rem;
+    
+        transform: translate(45px,10px)
+    }
+
+    .ChemElemContainer1 .ChemElemContent{
+        margin-top: 1rem;
+    }
+
+    .ButtonsContainer{
+        margin-top: 2rem;
+        
+        width: 100%;
+        
+        
+        
+    }
+
+    #AssignmentButton1{
+        z-index: 3;
+        
+       }
+       
+       #AssignmentButton2{
+           z-index: 2;
+           right: 0px;
+       }
+       
+       #AssignmentButton3{
+           z-index: 1;
+           right: 0px;
+       }
+
+
+    .Button{
+        
+        font-size: 1.4rem;
+        height: 2.5rem;
+        border-radius: 12px ;
+        
+        width: 100%;
+        max-width: 10rem;
+        
+        
+        
+    }
+
+    .AssignmentText{
+        font-size: 1.5rem;
+    }
+
+    .MainInputContainer{
+        display: grid;
+        grid-template-columns: 1fr ;
+        column-gap: 2rem;
+    
+        margin-top: 1rem;
+    
+        justify-self: center;
+        align-self: center;
+        
+        width: 96%;
+    }
+
+
+    .AddElemContainer{
+        grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+        column-gap: 1rem;
+    }
+
+    .OtherButtonsContainer{
+        margin-top: 1rem;
+
+        margin-bottom: 2rem;
+        
+    }
+
+    .FinalButtonsContainer{
+        
+        width: 95%;
+        max-width: 26rem;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(auto-fill,minmax(10rem,1fr));
+    }
+
+    .ButtonAgain,.ButtonEvaluate{
+        margin: 0;
+        width: 100%;
+    }
+    
+}
+
+/* Mobile Version */
+@media screen and (max-width:450px){
+    
+}
+
 /* Quick fixes */
 @media screen and (max-width:1400px){
     .FinalButtonsContainer{
@@ -470,13 +602,22 @@
     
 }
 
-
-/* Tablet Version */
-@media screen and (max-width:1000px){
-    
+@media screen and (max-width:1050px) {
+    .UserAddedAtom{
+        margin-left: 5%;
+    }
 }
 
-/* Mobile Version */
+@media screen and (max-width:799px) {
+    .UserAddedAtom{
+        margin-left: 8%;
+    }
+}
 
+@media screen and (max-width: 650px){
+    .UserAddedAtom{
+        margin-left: 3%;
+    }
+}
 
 

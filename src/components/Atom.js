@@ -4,7 +4,7 @@ import styles from "./Atom.module.css"
 export default function Atom(props){
 
     function WhichColor(){
-        let gradient = {}
+        let gradient = {} 
 
         if(props.text === "H"){
             gradient = {background:"linear-gradient(325.19deg, #1C77FF 16.22%, #21A4C0 84.25%)"}
