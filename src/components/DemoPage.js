@@ -173,7 +173,7 @@ export default function DemoPage() {
 
         <div className={styles.MainContentContainer}>
         
-            <AssignmentButtons SetAssignment = {ChangeAssignment}/>
+            <AssignmentButtons SetAssignment = {ChangeAssignment} SetCheck = {ChangeCheck} SetSolve = {SetSolve} AddItemToArray1 = {AddItemToArray1} AddItemToArray2 = {AddItemToArray2}/>
 
             <AssignmentText WhichAssignmentState = {WhichAssignment}/>
 
@@ -233,8 +233,8 @@ export default function DemoPage() {
 
         <div className={styles.MainInputContainer}>
 
-            
             <AddAtomButtons AddNewAtomState = {AddNewElem} />
+            
 
             <div className={styles.OtherButtonsContainer}>
 

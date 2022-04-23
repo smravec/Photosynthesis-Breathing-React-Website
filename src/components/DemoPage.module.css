@@ -27,6 +27,8 @@
     
     
     height: fit-content;
+
+    
 }
 
 /* Main Content section */
@@ -427,6 +429,12 @@
 
     .MainInputContainer{
         width: 100%;
+        
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        
+        
     }
 
     @keyframes CheckAppearing {
@@ -509,3 +517,17 @@
         margin-left: 3%;
     }
 }
+
+@media screen and (max-width: 500px){
+    .OtherButtonsContainer{
+        margin-top: 32rem;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .OtherButtonsContainer{
+        margin-top: 27rem;
+    }
+}
+
+

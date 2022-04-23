@@ -1,13 +1,13 @@
 .MainContainer{
     margin-top: 1rem;
-
+    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 
     row-gap: 1.25rem;
     column-gap: 1rem;
 
-    align-self: center;
+    overflow: hidden;    
 }
 
 .ButtonContainer{
@@ -21,9 +21,10 @@
     max-width: 8rem;
     height: 12.5rem;
 
-    box-sizing: border-box;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 24px;
+
+    margin-bottom: 1rem;
 }
 
 /* Atom that signifies which element would this button add */
@@ -33,11 +34,12 @@
     width: 100px;
     height: 100px;
 
-    transform:translate(0px, -42px);
+    transform:translate(0px, -46px);
 }
 
 .Atom div:first-child{
     font-size: 1.9rem;
+
     transform:translate(40px, 30px);
 }
 
@@ -71,7 +73,6 @@
 .Add1Vector{
     position: relative;
     
-
     border-radius: 5px;
 }
 
@@ -127,14 +128,16 @@
 
         border: 1px solid rgba(200, 245, 202, 0.82);
 
-        box-sizing: border-box;
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 
         border-radius: 24px;
 
         column-gap: 0px;
 
-        width: 98%;
+        width: 90%;
+        left: 20px;
+
+        position: absolute;
 
         margin-bottom: 1rem;
         padding-top: 1rem;
