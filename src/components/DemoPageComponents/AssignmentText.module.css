@@ -36,6 +36,7 @@
 
     padding: 0.5rem;
 
+    overflow: scroll;
 }
 
 
@@ -58,24 +59,8 @@
 
 @media screen and (max-width:600px){
     .AssignmentText span{
-        font-size: 1.65rem;
+        font-size: 1.6rem;
+        white-space: nowrap;
     }
 }
 
-@media screen and (max-width:500px){
-    .AssignmentText span{
-        font-size: 1.3rem;
-    }
-}
-
-@media screen and (max-width:400px){
-    .AssignmentText span{
-        font-size: 1.1rem;
-    }
-}
-
-@media screen and (max-width:350px){
-    .AssignmentText span{
-        font-size: 0.94rem;
-    }
-}
