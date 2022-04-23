@@ -1,9 +1,13 @@
 import styles from "./DemoPage.module.css";
 //import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+
 import Atom from "./Atom";
-import AddElemDemoPage from "./AddElemDemoPage";
+
 import BackButton from "./BackButton";
+import AssignmentButtons from "./DemoPageComponents/AssignmentButtons";
+import AssignmentText from "./DemoPageComponents/AssignmentText";
+import AddAtomButtons from "./DemoPageComponents/AddAtomButtons"
 
 import {FiCheckCircle} from "react-icons/fi"
 import {ImCross} from "react-icons/im"
@@ -164,67 +168,50 @@ export default function DemoPage() {
 
   return (
     <div className={styles.MainContainer}>
-      <BackButton/>
+
+        <BackButton/>
 
         <div className={styles.MainContentContainer}>
         
-            <div className={styles.ButtonsContainer}>
-                <button onClick={()=>{ChangeAssignment("1");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.AssignmentButton1}></button>
-                <button onClick={()=>{ChangeAssignment("2");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.AssignmentButton2}></button>
-                <button onClick={()=>{ChangeAssignment("3"); ChangeCheck("1");SetSolve("solving");AddItemToArray1([]);AddItemToArray2([]);}} className={styles.Button} id={styles.AssignmentButton3}></button>
-            </div>
+            <AssignmentButtons SetAssignment = {ChangeAssignment}/>
 
-            <div className={styles.AssignmentTextContainer}>
-                <div className={styles.AssignmentText}>Zadanie :&nbsp;
-                    {WhichAssignment === "1" ? <span className={styles.AssignmentTextNew}>Poskladaj vstupy do vzorcu dýchania</span>:null}
-                    {WhichAssignment === "2" ? <span className={styles.AssignmentTextNew}>Poskladaj vstupy do vzorcu fotosyntéza</span>:null}
-                    {WhichAssignment === "3" ? <span className={styles.AssignmentTextNew}>Poskladaj vzorec ATP</span>:null}
-                </div>
-           
-           
-            </div>
+            <AssignmentText WhichAssignmentState = {WhichAssignment}/>
 
             <div className={styles.MainContentDisplay}>
 
-                
-
                 <div className={styles.ChemElemContainer1}>
+
                     <div className={styles.ChemElemContent} id={SolvedState !== "solving" ? styles.ChemElemContainer1_evaluated : null}>
 
                         {Elems1Array.map((elem) => {
                             return(
                                 <div key= {elem.name} className={styles.UserAddedAtom} style={{"margin-top": elem.margin}}>
-                                <div className={styles.AtomContainer}>
-                                    <Atom className={styles.Atom} key={elem.name} text = {elem.name} number={elem.count} style={{background:elem.color}}/>
-                                </div>
+                                    <div className={styles.AtomContainer}> <Atom className={styles.Atom} key={elem.name} text = {elem.name} number={elem.count} style={{background:elem.color}}/> </div>
                                 </div>
                             )
-                            
                         })}
+
                     </div>
 
                     <div className={styles.CheckContainer}>
+
                         <div className={styles.NumberOfContainer} id={WhichIsChecked === "1" ? styles.NumberOfContainerSelected:null}>1</div>
 
                     </div>
-                    
                     
                 </div>
 
                 <div className={styles.ChemElemContainer2}>
 
-                        <div className={styles.NumberOfContainer } id={WhichIsChecked === "2" ? styles.NumberOfContainerSelected:null}>2</div>
+                    <div className={styles.NumberOfContainer } id={WhichIsChecked === "2" ? styles.NumberOfContainerSelected:null}>2</div>
 
                     <div className={styles.ChemElemContent} id={SolvedState !== "solving" ? styles.ChemElemContainer2_evaluated : null}>
                         {Elems2Array.map((elem) => {
                                 return(
                                     <div key= {elem.name} className={styles.UserAddedAtom} style={{"margin-top": elem.margin}}>
-                                    <div className={styles.AtomContainer}>
-                                        <Atom key={elem.name} className={styles.Atom} text = {elem.name} number={elem.count} style={{background:elem.color}}/>
+                                        <div className={styles.AtomContainer}> <Atom key={elem.name} className={styles.Atom} text = {elem.name} number={elem.count} style={{background:elem.color}}/> </div>
                                     </div>
-                                </div>
                                 )
-                                
                             })}
 
                     </div>
@@ -245,31 +232,35 @@ export default function DemoPage() {
         </div>
 
         <div className={styles.MainInputContainer}>
-        <div className={styles.AddElemContainer}>
-            <AddElemDemoPage onClick1={()=>{AddNewElem("H",1)}} onClick2={()=>{AddNewElem("H",2)}} text="H" />
-            <AddElemDemoPage onClick1={()=>{AddNewElem("C",1)}} onClick2={()=>{AddNewElem("C",2)}} text="C" />
-            <AddElemDemoPage onClick1={()=>{AddNewElem("P",1)}} onClick2={()=>{AddNewElem("P",2)}} text="P" />
-            <AddElemDemoPage onClick1={()=>{AddNewElem("N",1)}} onClick2={()=>{AddNewElem("N",2)}} text="N" />
-            <AddElemDemoPage onClick1={()=>{AddNewElem("O",1)}} onClick2={()=>{AddNewElem("O",2)}} text="O" />
+
+            
+            <AddAtomButtons AddNewAtomState = {AddNewElem} />
+
+            <div className={styles.OtherButtonsContainer}>
+
+                <div className={styles.SelectContainerButtonContainer}>
+                
+                    <button onClick={()=>{ChangeCheck("1")}} className={styles.SelectContainerButton1} id={ WhichIsChecked === "1" ? styles.SelectContainerButton1_checked : styles.SelectContainerButton1_unchecked} >
+                        1
+                    </button>
+                    
+                    <button onClick={()=>{ChangeCheck("2")}} className={styles.SelectContainerButton2} disabled={WhichAssignment === "3" ? true :false} id={ WhichIsChecked === "2" ? styles.SelectContainerButton2_checked : styles.SelectContainerButton2_unchecked} >
+                        2
+                    </button>
+
+                </div>
+
+                <div className={styles.FinalButtonsContainer} >
+
+                    <button className={styles.ButtonAgain} onClick={()=>{AddItemToArray1([]);AddItemToArray2([]);SetSolve("solving")}}> Znova </button>
+                    <button className={styles.ButtonEvaluate} onClick={()=>{SetSolve(CheckIfTheInputIsRight() ? "solved":"wrong")}}> Vyhodnoť </button>
+                    
+                </div>
+
+            </div>
 
         </div>
 
-        <div className={styles.OtherButtonsContainer}>
-        <div className={styles.SelectContainerButtonContainer}>
-            <button onClick={()=>{ChangeCheck("1")}} className={styles.SelectContainerButton1} id={ WhichIsChecked === "1" ? styles.SelectContainerButton1_checked : styles.SelectContainerButton1_unchecked} >
-                1
-            </button>
-            <button onClick={()=>{ChangeCheck("2")}} className={styles.SelectContainerButton2} disabled={WhichAssignment === "3" ? true :false} id={ WhichIsChecked === "2" ? styles.SelectContainerButton2_checked : styles.SelectContainerButton2_unchecked} >
-                2
-            </button>
-        </div>
-
-        <div className={styles.FinalButtonsContainer} >
-            <button className={styles.ButtonAgain} onClick={()=>{AddItemToArray1([]);AddItemToArray2([]);SetSolve("solving")}}> Znova </button>
-            <button className={styles.ButtonEvaluate} onClick={()=>{SetSolve(CheckIfTheInputIsRight() ? "solved":"wrong")}}> Vyhodnoť </button>
-        </div>
-        </div>
-        </div>
     </div>
   );
 }

@@ -1,0 +1,79 @@
+.ButtonsContainer{
+    width: 100%;
+    max-width: 600px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.ButtonsContainer button{
+    font-family: "Play Fair Display";
+    font-size: 2rem;
+    color: #525151;
+
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.41);
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+
+#Button1{
+    z-index: 3;
+    
+   }
+   
+#Button2{
+    z-index: 2;
+    right: 25px;
+}
+    
+#Button3{
+    z-index: 1;
+    right: 50px;
+}
+
+#Button1::before{
+    content: "Úloha 1";
+}
+
+#Button2::before{
+    content: "Úloha 2";
+}
+
+#Button3::before{
+    content: "Úloha 3";
+}
+
+@media screen and (max-width: 800px){
+    .ButtonsContainer{
+        max-width: 400px;
+    }
+
+    .ButtonsContainer button{
+        font-size: 1.8rem;
+
+        border-radius: 12px;
+    }
+
+    #Button1::before{
+        content: "1";
+    }
+
+    #Button2::before{
+     content: "2";
+    }
+
+    #Button3::before{
+        content: "3";
+    }
+    
+}
+
+@media screen and (max-width:450px){
+    .ButtonsContainer{
+        max-width: 96%;
+    }
+}

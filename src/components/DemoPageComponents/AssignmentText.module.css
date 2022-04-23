@@ -1,0 +1,81 @@
+.AssignmentText{
+    font-size: 2rem;
+    font-weight: 200;
+    align-self: center;
+    
+    color: #474646;
+    
+    margin-top: 1rem;
+
+    
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+@keyframes loadingtext {
+    0%{
+        background-color: rgb(199, 197, 197);
+        color: transparent;
+    }    
+
+    60%{
+
+        color: transparent ;
+    }
+
+    100%{
+        background-color: white;
+        color: #474646;
+    }
+}
+
+.AssignmentText span{
+    animation: loadingtext 1s ease-in;
+
+    border-radius: 10px;
+
+    padding: 0.5rem;
+
+}
+
+
+@media screen and (max-width:770px){
+    .AssignmentText{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .AssignmentText span{
+        animation: loadingtext 1s ease-in;
+    
+        border-radius: 10px;
+    
+        padding: 0;
+        margin-top: 0.5rem;
+    }
+}
+
+@media screen and (max-width:600px){
+    .AssignmentText span{
+        font-size: 1.65rem;
+    }
+}
+
+@media screen and (max-width:500px){
+    .AssignmentText span{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width:400px){
+    .AssignmentText span{
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width:350px){
+    .AssignmentText span{
+        font-size: 0.94rem;
+    }
+}
