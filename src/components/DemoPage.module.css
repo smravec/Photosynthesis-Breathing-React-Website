@@ -25,51 +25,7 @@
     display: flex;
     flex-direction: column;
     
-    background-color: white;
-    
     height: 50rem;
-}
-
-/* Back button section */
-.BackButtonContainer{
-    width:273px;
-    height:156px;
-
-    position: absolute;
-
-    align-self: flex-end;
-}
-
-.BackButtonSvg{
-    z-index: -1;
-}
-
-.BackButton{
-    padding-left: 4rem;
-    padding-right: 4rem;
-    padding-top: 0.75rem;
-    padding-bottom: 1rem;
-
-    font-family: "Playfair Display", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #383838;
-
-    background-color: #C7FFC6;
-
-    position: relative;
-    bottom: 140px;
-    left: 70px;
-
-    cursor: pointer;
-
-    border: none;
-    border-radius: 20px;
-    box-shadow:4px 2px 4px 1px rgba(0, 0, 0, 0.25);
-}
-
-.BackButton:hover{
-    background-color: #a2d3a1;
 }
 
 /* Main Content section */
@@ -77,7 +33,6 @@
     width: 96%;
     
     align-self: center;
-    
 }
 
 /* Assignment Buttons section */
@@ -265,6 +220,8 @@
 
     display: flex;
     align-self: center;
+
+    font-size: 1rem;
 }
 
 
@@ -493,6 +450,10 @@
         height: 70px;
     }
 
+    .ChemElemContent{
+        font-size: 1rem;
+    }
+
     .Atom div:first-child{
         font-size: 1.3rem;
         transform:translate(27px, 21px);
@@ -516,17 +477,16 @@
 
     #AssignmentButton1{
         z-index: 3;
-        
        }
        
        #AssignmentButton2{
            z-index: 2;
-           right: 30px;
+           right: 20px;
        }
        
        #AssignmentButton3{
            z-index: 1;
-           right: 50px;
+           right: 40px;
        }
 
        #AssignmentButton1::before{
@@ -543,13 +503,14 @@
 
 
     .Button{
+
         
         font-size: 1.8rem;
         height: 2.5rem;
         border-radius: 12px ;
         
-        width: 100%;
-        max-width: 10rem; 
+        width: 50%;
+        max-width: 8rem; 
     }
 
 
@@ -594,7 +555,6 @@
         margin-top: 1rem;
 
         margin-bottom: 2rem;
-        
     }
 
     .FinalButtonsContainer{
@@ -615,7 +575,68 @@
 
 /* Mobile Version */
 @media screen and (max-width:450px){
+
+    .AssignmentText{
+        margin-top: 0;
+    }
+
+    .AssignmentTextNew{
+        height: 4rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .MainContentDisplay{
+        margin-top: 0;
+        height: 20rem;
+    }
+
+    .ChemElemContainer1 .ChemElemContent{
+        
+    }
+
+    .ChemElemContent{
+        font-size: 0.8rem;
+    }
+
+    .Atom,.AtomContainer{
+        width: 40px;
+        height: 40px;
+    }
+
+    .Atom div:first-child{
+        font-size: 0.9rem;
+        transform:translate(14px, 8px);
+    }
     
+    .Atom div:last-child{
+        font-size: 0.8rem;
+    
+        transform: translate(24px,-2px)
+    }
+
+    .AddElemContainer{
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 0.2rem;
+    }
+
+    .MainInputContainer{
+        width: 100%;
+    }
+
+    .ButtonsContainer{
+        margin-top: 0;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .Button{
+        width: 100%;
+        padding: 0;
+    }
+
+
 }
 
 /* Quick fixes */
@@ -658,5 +679,3 @@
         font-size: 1.4rem;
     }
 }
-
-

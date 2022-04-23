@@ -70,9 +70,9 @@ export default function DemoPage() {
             }
         }
         else{
-            const randomMargin = Math.random() * 12 / 2
+            const randomMargin = Math.random() * 10 / 2
             
-            const NewElem = {name:ElemName, count:AddingOneOrTwo.toString() ,margin:randomMargin + "rem"   }
+            const NewElem = {name:ElemName, count:AddingOneOrTwo.toString() ,margin:randomMargin + "em"   }
             
             if(WhichIsChecked ==="1"){
                 AddItemToArray1([...Elems1Array,NewElem])
@@ -266,7 +266,7 @@ export default function DemoPage() {
 
         <div className={styles.FinalButtonsContainer} >
             <button className={styles.ButtonAgain} onClick={()=>{AddItemToArray1([]);AddItemToArray2([]);SetSolve("solving")}}> Znova </button>
-            <button className={styles.ButtonEvaluate} onClick={()=>{SetSolve(CheckIfTheInputIsRight() ? "solved":"wrong");}}> Vyhodnoť </button>
+            <button className={styles.ButtonEvaluate} onClick={()=>{SetSolve(CheckIfTheInputIsRight() ? "solved":"wrong")}}> Vyhodnoť </button>
         </div>
         </div>
         </div>
