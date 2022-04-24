@@ -381,14 +381,15 @@
     }
 
     .FinalButtonsContainer{
-        width: 95%;
+        width: 88%;
 
         max-width: 26rem;
 
         display: grid;
         justify-items: center;
 
-        grid-template-columns: repeat(auto-fill,minmax(10rem,1fr));
+        grid-template-columns: repeat(auto-fill,minmax(1fr,10rem));
+        
     }
 
     .ButtonAgain,.ButtonEvaluate{
@@ -481,6 +482,15 @@
     
         color: rgb(219, 43, 33);
     }
+
+    .FinalButtonsContainer{
+        grid-template-columns: 1fr;
+        grid-row: 1fr 1fr;
+
+        width: 80%;
+
+    }
+    
 
 }
 
