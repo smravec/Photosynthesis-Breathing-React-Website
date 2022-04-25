@@ -26,19 +26,19 @@ export default function QuizPage(){
             
                 <QuestionType1 Question = "Aký dej je fotozyntéza ?" RightAnswer = "Anabolický" Solved = {Solved} />
 
-                <QuestionType1 Question = "Kolko je podmienok pre fotosyntezu?" RightAnswer = "4" Solved = {Solved}/>
+                <QuestionType1 Question = "Koľko je podmienok pre fotosyntézu?" RightAnswer = "4" Solved = {Solved}/>
 
-                <QuestionType1 Question = "Z kolko faz sa sklada fotosynteza ?" RightAnswer = "2" Solved = {Solved}/>
+                <QuestionType1 Question = "Z koľko fáz sa skladá fotosyntéza ?" RightAnswer = "2" Solved = {Solved}/>
 
-                <QuestionType1 Question = "Patri medzi produkty prvej fazy fotosyntezy ATP ?" RightAnswer = "Ano" Solved = {Solved}/>
+                <QuestionType1 Question = "Patrí medzi produkty prvej fázy fotosyntézy ATP ?" RightAnswer = "Ano" Solved = {Solved}/>
 
-                <QuestionType1 Question = "Je Calvinov-Bensonov cyklus typicky pre rastliny C4 ?" RightAnswer = "Nie" Solved = {Solved}/>
+                <QuestionType1 Question = "Je Calvinov-Bensonov cyklus typický pre rastliny C4 ?" RightAnswer = "Nie" Solved = {Solved}/>
 
-                <QuestionType1 Question = "Odohrava sa prva faza fotozyntézy cez noc ?" RightAnswer = "Nie" Solved = {Solved}/>
+                <QuestionType1 Question = "Odohravá sa prvá fáza fotozyntézy cez noc ?" RightAnswer = "Nie" Solved = {Solved}/>
 
-                <QuestionType1 Question = "Prebieha druha faza fotosyntezy v strome chloroplastov ?" RightAnswer = "Ano" Solved = {Solved}/>
+                <QuestionType1 Question = "Prebieha druhá fáza fotosyntézy v strome chloroplastov ?" RightAnswer = "Ano" Solved = {Solved}/>
 
-                <QuestionType1 Question = "Mozme nazvat tmavu fazu fotosyntezy aj synteticka ?" RightAnswer="Ano" Solved = {Solved}/>
+                <QuestionType1 Question = "Možme nazvať tmavú fázu fotosyntézy aj syntetická ?" RightAnswer="Ano" Solved = {Solved}/>
 
                 <QuestionType1 Question = "Je Hatchov-Slackov cyklus typický pre C3 rastliny ?" RightAnswer="Nie" Solved = {Solved}/>
 
