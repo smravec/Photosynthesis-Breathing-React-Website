@@ -4,6 +4,7 @@
 
     width: 70%;
     height: 12rem;
+    
 
     background-color: rgb(243, 246, 239);
     
@@ -12,7 +13,6 @@
     border: 2px solid rgb(200, 199, 199);
 
     border-radius: 20px ;
-
 }
 
 .MainContainer div:first-child{
@@ -24,18 +24,25 @@
     margin-top: 1rem;
 }
 
-.MainContainer div:last-child{
-    font-size: 2rem;
-    background-color: rgb(230, 230, 230);
-    width: 40%;
-    border-radius: 10px;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    padding-left: 1rem;
+.Answer{
+    margin-top: 3rem;
+    margin-left: 0.5rem;
+    height: 3rem;
+    font-size: 1.5rem;
 
-    margin-top: 4rem;
-    margin-left: 1rem;
+    border-radius:10px;
 
-    font-weight: 100;
-    color: rgb(52, 51, 51);
+    border: 1px solid rgb(193, 193, 193);
+
+    font-family: "Roboto";
+}
+
+
+#RightAnswer{
+    background-color: rgb(34, 207, 34);
+}
+
+#WrongAnswer{
+    background-color: rgb(254, 43, 43);
+    
 }

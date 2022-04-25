@@ -24,3 +24,63 @@
     border-bottom: 1px solid rgb(177, 177, 177);
 }
 
+.EvaluateButton{
+    background: linear-gradient(92.77deg, rgba(86, 213, 241, 0.79) 0%, rgba(14, 120, 219, 0.85) 100%);
+    color: rgb(255, 252, 252);
+
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+
+    font-size: 2rem;
+    font-family: "Roboto";
+    font-weight: 100;
+
+    width: 50%;
+    max-width: 500px;
+    min-width: 240px;
+
+    align-self: center;
+
+    border-radius: 10px;
+    border: none;
+
+    height: 4rem;
+}
+
+.EvaluateButton:hover,.EvaluateButton:active{
+    background: linear-gradient(92.77deg, rgba(66, 167, 190, 0.79) 0%, rgba(11, 99, 181, 0.85) 100%); 
+
+    cursor: pointer;
+}
+
+
+
+
+.AgainButton{
+    margin-bottom: 2rem;
+
+    background:linear-gradient(92.53deg, #FC3838 3.34%, #FF8A00 97.64%) ;
+    color: rgb(255, 252, 252);
+
+    font-size: 2rem;
+    font-family: "Roboto";
+    font-weight: 100;
+
+    width: 50%;
+    max-width: 500px;
+    min-width: 240px;
+
+    align-self: center;
+
+    border-radius: 10px;
+    border: none;
+
+    height: 4rem;
+}
+
+.AgainButton:hover,.AgainButton:active{
+    background: linear-gradient(92.53deg, #bc2323 3.34%, #c96e06 97.64%);
+
+    cursor: pointer;
+}
+

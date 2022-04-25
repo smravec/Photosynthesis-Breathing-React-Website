@@ -1,0 +1,110 @@
+.MainContainer{
+    margin-top: 4rem;
+    margin-left: 1rem;
+    padding-right: 2rem;
+
+    width: 90%;
+    height: 16rem;
+
+    background-color: rgb(243, 246, 239);
+    
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    border: 2px solid rgb(200, 199, 199);
+
+    border-radius: 20px ;
+}
+
+.MainContainer div:first-child{
+    font-size: 1.9rem;
+
+    overflow-x: auto;
+
+    white-space: nowrap;
+
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 0.5rem;
+
+    font-weight: 100;
+
+    color: rgb(46, 46, 46);
+}
+
+
+.SvgContainer{
+    width: fit-content;
+
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+
+    
+}
+
+.SvgContainer:hover{
+    cursor: pointer;
+}
+
+.SvgContainer *{
+    display: flex;
+
+    width: 1.7rem;
+    height: auto;
+
+    align-self: center;
+}
+
+.Answer{
+    display: flex;
+
+    font-size: 1.4rem;
+    
+    color: rgb(46, 46, 46);
+
+    margin-left: 1rem;
+    margin-top: 0.9rem;
+}
+
+#AnswerWrong{
+    background-color: rgb(254, 43, 43);
+    border-radius: 10px;
+}
+
+#AnswerRight{
+    background-color: rgb(34, 207, 34);
+    border-radius: 10px;
+}
+
+.Answer div{
+    white-space: nowrap;
+
+    overflow-x: auto;
+
+    margin-left: 10px;
+
+    align-self: center;
+
+    
+}
+
+@media screen and (max-width:600px){
+    .MainContainer{
+        align-self: center;
+
+        box-sizing: border-box;
+        padding-left: 0.2rem;
+        margin-left: 0;
+        width: 98%;
+    }
+
+    .MainContainer div:first-child{
+        font-size: 1.5rem;
+    }
+
+    .Answer div{
+        font-size: 1.2rem ;
+    }
+    
+}
