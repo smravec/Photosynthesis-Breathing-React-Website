@@ -4,7 +4,6 @@
 
     width: 70%;
     height: 12rem;
-    
 
     background-color: rgb(243, 246, 239);
     
@@ -13,6 +12,8 @@
     border: 2px solid rgb(200, 199, 199);
 
     border-radius: 20px ;
+
+    padding-right: 0.5rem;
 }
 
 .MainContainer div:first-child{
@@ -22,10 +23,20 @@
     color: rgb(46, 46, 46);
     margin-left: 1rem;
     margin-top: 1rem;
+
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.AnswerContainer{
+    display: flex;
+    margin-top: 3.5rem;
+    align-items: center;
+
 }
 
 .Answer{
-    margin-top: 3rem;
+    
     margin-left: 0.5rem;
     height: 3rem;
     font-size: 1.5rem;
@@ -43,6 +54,68 @@
 }
 
 #WrongAnswer{
-    background-color: rgb(254, 43, 43);
+    background-color: rgb(254, 43, 43);   
+}
+
+.CorrectAnswer{
+    display: flex;
+    
+    width: 80%;
+    align-self: center;
+    height: 100%;
+    
+    align-content: center;
+    
     
 }
+
+.RightAnswer{
+    font-size: 1.8rem;
+    margin-left: 0.5rem;
+
+    font-family: "PlayFair Display";
+    text-decoration: underline;
+
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.Check{
+    height: auto;
+    width: 3.5rem;
+    margin-left: 1rem;
+    color: rgb(11, 182, 11);
+}
+
+
+@media screen and (max-width:650px){
+    .MainContainer{
+        width: 90%;
+        height: 14rem;
+    }
+
+    .MainContainer div:first-child{
+        font-size: 1.8rem;
+    }
+
+    .AnswerContainer{
+        flex-direction: column;
+    }
+
+    .RightAnswer{
+        margin: 0;
+        
+    }
+
+    .CorrectAnswer{
+        justify-content: center;
+        margin-top: 0.3rem;
+    }
+
+    .Answer{
+        max-width: 400px;
+        width: 90%;
+    }
+    
+}
+

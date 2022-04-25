@@ -60,8 +60,17 @@ export default function QuestionType1(props){
                     
                 </input>
 
-                <div>
-                    {}
+                <div className={styles.CorrectAnswer}>
+                    {props.Solved === "solved" ? (CheckIfAnswerIsRight() !== true ? 
+                    
+            
+                    <span className={styles.RightAnswer}>{props.RightAnswer}</span>
+                     :
+                    
+                    
+                    <ImCheckmark className={styles.Check}/>
+                    
+                    ):null}
 
                 </div>
             </div>

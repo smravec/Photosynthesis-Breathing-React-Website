@@ -28,8 +28,8 @@ export default function QuestionType2(props){
 
             <div>{props.Question}</div>
 
-            <div className={styles.Answer}>
-                <button className={styles.SvgContainer} id={Evaluated === true ? (WhichIsChecked === "1" ? (props.RightAnswer === "1" ? styles.AnswerRight : styles.AnswerWrong ) : (props.RightAnswer === "1" ? styles.AnswerRight : null) ) : null} onClick={Evaluated === false ? ()=>SetWhichChecked("1"):null}>
+            <div className={styles.Answer} id={Evaluated === true ? (WhichIsChecked === "1" ? (props.RightAnswer === "1" ? styles.AnswerRight : styles.AnswerWrong ) : (props.RightAnswer === "1" ? styles.AnswerRight : null) ) : null}>
+                <button className={styles.SvgContainer} onClick={Evaluated === false ? ()=>SetWhichChecked("1"):null}>
                     {WhichIsChecked === "1" ? 
                     <ImCheckboxChecked/>:
                     <ImCheckboxUnchecked/> }

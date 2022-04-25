@@ -75,8 +75,6 @@ export default function QuizPage(){
 
                     <button className={styles.EvaluateButton} onClick={()=>{SetSolved("solved");SetEvaluate(true)}}> Vyhodnoť </button>
                     <button className={styles.AgainButton} onClick={()=>{SetSolved("solving");SetEvaluate(false)}}>Znova</button>
-                    <span></span>
-
 
                 </div>
 
