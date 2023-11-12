@@ -3,10 +3,7 @@ import HomePage from './components/HomePage';
 import DemoPage from './components/DemoPage';
 import QuizPage from './components/QuizPage';
 
-
 import {Route, Routes} from "react-router-dom"
-
-
 
 export default function App() {
   return(

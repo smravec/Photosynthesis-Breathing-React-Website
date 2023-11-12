@@ -35,6 +35,10 @@
     right: 50px;
 }
 
+#Button1:hover,#Button1:active,#Button2:hover,#Button2:active,#Button3:hover,#Button3:active{
+    background-color: rgb(181, 181, 181);
+}
+
 #Button1::before{
     content: "Úloha 1";
 }

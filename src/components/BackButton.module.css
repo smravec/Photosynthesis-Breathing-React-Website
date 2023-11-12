@@ -26,7 +26,7 @@
     width: 10rem;
 
     border: none;
-    border-radius: 20px;
+    border-radius: 12px;
     box-shadow:4px 2px 4px 1px rgba(0, 0, 0, 0.25);
     z-index: 2;
 
@@ -60,7 +60,7 @@
         height: 3rem;
         width: 9rem;
 
-        border-radius: 18px;
+        border-radius: 12px;
 
         font-size: 1.3rem;
     }
@@ -75,7 +75,7 @@
         height: 2.8rem;
         width: 8rem;
 
-        border-radius: 18px;
+        border-radius: 12px;
 
         font-size: 1.2rem;
 
